@@ -1,9 +1,36 @@
 extends ../_template
 
-block variables
-  - var title = 'Home page'
+block title
+	title Welcome
 
 block content
-  include ../common/_greating
+	.wrapper.wrapper--welcome
+		.section.welcome
+			a.auth-button Авторизоваться
+		.hello
+			header.hello__header
+				.hello__img-wrapper
+					img(src=`./assets/img/hello_photo.jpg`).hello__img
+			h1.hello__name Константин Константинов
+			h2.hello__description Личный сайт веб разработчика
+			.hello__socials
+			- var socials = [ { item: 'vk', link: 'https://vk.com/id13047302'}, { item: 'github', link: 'https://github.com/3elik'}, {item:'in', link: 'https://www.linkedin.com/in/alex-herbut-277343106/'}]
+			.socials
+				ul.socials__list
+					each social in socials
+						li.socials__item
+							a(href=`${social.link}` class=`socials__link socials__link--${social.item}` target="_blank")
+								svg(class=`socials__img socials__img--${social.item}`)
+									use(xlink:href=`./assets/img/sprite.svg#${social.item}`)
 
-  span.test
+			footer.hello__footer
+				ul.buttons
+					li.buttons__item.buttons__item--my-work
+						a(href="#").buttons__link Мои работы
+					li.buttons__item.buttons__item--about
+						a(href="#").buttons__link Обо мне
+					li.buttons__item.buttons__item--blog
+						a(href="#").buttons__link Блог
+	footer.footer.footer--welcome
+		.copyright
+			p © Владимир Астахов | создано с любовью в LoftSchool | 2016

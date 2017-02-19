@@ -1,13 +1,8 @@
-body {
-  margin: 0;
-}
-
 @import 'common/fonts';
 @import 'common/variables';
+@import 'common/mixins';
 @import 'common/adjustment';
 @import 'common/sprite';
-
-.test {
-  display: inline-block;
-  @include sprite($fb);
-}
+@import 'layout/welcome';
+@import 'blocks/hello';
+@import 'blocks/socials';

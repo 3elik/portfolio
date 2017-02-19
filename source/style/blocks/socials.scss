@@ -1,0 +1,28 @@
+.socials {
+  margin-bottom: 20px;
+  &__list {
+    text-align: center;
+  }
+  &__item {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  &__link {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+  &__img {
+    width: 25px;
+    height: 25px;
+    fill: $white;
+    opacity: 0.5;
+    @include centered();
+
+    &:hover {
+      fill: $green;
+
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@mixin rounded-btn($color, $height) {
+  border: 1px solid $color;
+  border-radius: $height;
+}
+
+@mixin centered($pos: 'b') { // both as default
+  position: absolute;
+  @if $pos == 'h' { //horizontal
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $pos == 'v' { //vertical
+    top: 50%;
+    transform: translateY(-50%);
+  } @else {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
