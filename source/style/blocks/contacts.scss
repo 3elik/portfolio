@@ -1,0 +1,39 @@
+.contacts {
+  width: 380px;
+  height: 310px;
+  top: 215px;
+  padding: 35px;
+  @include centered('h');
+  border-radius: 10px;
+  opacity: 0.8;
+  background: #f4f5f0;
+  overflow: hidden;
+
+  &__item {
+    margin-bottom: 13px;
+  }
+
+  &__img {
+    display: inline-block;
+    width: 25px;
+    height: 24px;
+    @include centered();
+    fill: $green;
+    vertical-align: middle;
+    &-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 35px;
+      height: 24px;
+      vertical-align: middle;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    font-family: $r-m;
+    font-size: $regular-fs;
+    color: #455a64;
+    vertical-align: middle;
+  }
+}

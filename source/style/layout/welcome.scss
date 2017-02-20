@@ -1,12 +1,15 @@
-.section {
-  height: 100%;
-  width: 100%;
-}
-
 .welcome {
+  width: 100%;
+  height: 100%;
   position: relative;
   background-image: url("../img/water.jpg");
   background-size: cover;
+  color: $white;
+}
+
+.wrapper--welcome {
+  height: 100%;
+  margin-bottom: 0;
 }
 
 .auth-button {
@@ -26,15 +29,5 @@
   &:hover {
     border-color: $light-green;
     background-color: $green;
-  }
-}
-
-.footer {
-  position: relative;
-  &--welcome {
-    margin-top: -60px;
-    text-align: center;
-    font-family: $r-r;
-    font-size: $regular-fs;
   }
 }

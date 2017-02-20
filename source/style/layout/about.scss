@@ -1,0 +1,101 @@
+.about {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  padding: 0 10px;
+  vertical-align: top;
+  &__col {
+    position: relative;
+    width: 50%;
+    padding-top: 20px;
+    float: left;
+    &--left {
+      background: $yellow-light;
+      .about__triangle {
+        fill: $yellow-light;
+      }
+    }
+    &--right {
+      background: $yellow-ll;
+      .about__triangle {
+        fill: $yellow-ll;
+      }
+    }
+  }
+  &__triangle {
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: 100%;
+    height: 160px;
+  }
+  &__img {
+    width: 100%;
+    &-wrapper {
+      padding: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.arrow-down {
+  bottom: 75px;
+  @include centered('h');
+  z-index: 1;
+  cursor: pointer;
+  opacity: 0.7;
+  &__img {
+    fill: $white;
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.section-about {
+  @extend %clearfix;
+  font-size: 0px;
+  background: #ebefe2;
+}
+
+.block {
+  &__title {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    color: $dark-green;
+    font-family: $sansus;
+    font-size: $subheader-fs;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:after {
+      content: "";
+      display: block;
+      border-bottom: 3px solid $dark-green;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 2px;
+      width: 100px;
+    }
+  }
+  &__text {
+    font-family: $r-r;
+    font-size: $regular-fs;
+    color: $dark-green;
+    p {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.map {
+  position: relative;
+  margin-bottom: -185px;
+  &__img {
+    display: block;
+    width: 100%;
+  }
+}

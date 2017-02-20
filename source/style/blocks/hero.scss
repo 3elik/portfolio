@@ -1,0 +1,22 @@
+.hero {
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+  &__bg {
+    width: 100%;
+    top: 0;
+    @include centered('h');
+  }
+  &__container {
+    width: 100%;
+    @include centered('v');
+    text-align: center;
+    &-img {
+      height: 313px;
+      width: 100%;
+      fill: rgba($white, 0.2);
+      @include centered();
+      z-index: -1;
+    }
+  }
+}
