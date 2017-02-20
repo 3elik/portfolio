@@ -16,7 +16,10 @@ block content
 							a(href=`${social.link}` class=`socials__link socials__link--${social.item}` target="_blank")
 								svg(class=`socials__img socials__img--${social.item}`)
 									use(xlink:href=`./assets/img/sprite.svg#${social.item}`)
-			.menu
+			.hamburger
+				a(href="#").hamburger__link
+					svg.hamburger__img
+						use(xlink:href=`./assets/img/sprite.svg#hamburger`)
 			.hero__container
 				svg.hero__container-img
 					use(xlink:href=`./assets/img/sprite.svg#portfolio_header`)
