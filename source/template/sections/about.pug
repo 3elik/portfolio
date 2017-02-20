@@ -1,0 +1,52 @@
+section.section.section-about
+	.about__col.about__col--left
+		svg(viewBox="0 0 1000 160" preserveAspectRatio="none").about__triangle
+			polygon(points="0,0 0,160 1000,160")
+		.section__title
+			.section__title-title Обо мне
+			svg(viewBox="0 0 498.161 175.44").section__title-bg
+				use(xlink:href=`./assets/img/sprite.svg#about_header`)
+		.about
+			.about__img-wrapper
+				img(src="./assets/img/hello_photo.jpg").about__img
+			.block__title
+				| Кто я
+			.block__text
+				p #{about.text.p1}
+				p #{about.text.p2}
+	.about__col.about__col--right
+		svg(viewBox="0 0 1000 160" preserveAspectRatio="none").about__triangle
+			polygon(points="0,160 1000,160 1000,0")
+		.skills
+			.block__title
+				| Чем я могу быть Вам полезен
+			.skills__text
+				p #{about.skills.text}
+			ul.skills-group
+				each skill in about.skills.skills
+					li.skills-group__item
+						.skills-group__title #{skill.title}
+						ul.skills-list
+							each dia in skill.dia
+								li.skills-list__item
+									.skill
+										svg(width="120" height="120").skill__circle
+											- var r = 50;
+											- var opacity = dia.value / 100;
+											- var val = r * opacity * 2 * Math.PI;
+											circle(r=`${r}` cx="60" cy="60" stroke="#dfdcd5" fill="none")
+											circle(r=`${r}` cx="60" cy="60" stroke="#74a163" transform="rotate(-90 60 60)" class="sector" stroke-dasharray=`${val} 300` stroke-opacity=`${opacity}`)
+										.skill__title #{dia.title}
+section.section.map
+	img(src="./assets/img/map.jpg").map__img
+	.map__contacts.contacts
+		.contacts__title.block__title
+			| Контакты
+		ul.contacts__list
+			each contact in about.contacts
+				li.contacts__item
+					.contacts__img-wrapper
+						svg(class=`contacts__img contacts__img--${contact.item}`)
+							use(xlink:href=`./assets/img/sprite.svg#${contact.item}`)
+					.contacts__text
+						| #{contact.text}
