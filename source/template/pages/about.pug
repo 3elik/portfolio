@@ -3,5 +3,11 @@ extends ../layout
 block title
 	title Обо мне
 
+block hero
+	+hero('Гербут Алексей', 'Личный сайт веб разработчика')
+
 block main_content
 	include ../sections/about
+
+block footer
+	+footer("Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете", "Martin Golding")
