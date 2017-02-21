@@ -1,0 +1,18 @@
+section.section.section-blog
+	.figure
+		svg(viewBox="0 0 1000 160" preserveAspectRatio="none").figure__triangle.figure__triangle--left
+			polygon(points="0,0 0,160 1000,160")
+		svg(viewBox="0 0 1000 160" preserveAspectRatio="none").figure__triangle.figure__triangle--right
+			polygon(points="0,160 1000,160 1000,0")
+	aside.sidebar
+		ul.sidebar__list
+			each article in blog.articles
+				- var active = (article.id == 4 ? "sidebar__item--active": "")
+				li(class=`sidebar__item sidebar__item--${article.id} ${active}`)
+					a(href="#" class=`sidebar__link sidebar__link--${article.id}`) #{article.title}
+	.articles
+		each article in blog.articles
+			article(id=`article-${article.id}`).article
+				h2.article__title #{article.title}
+				.article__date #{article.date}
+				.article__content!= article.text

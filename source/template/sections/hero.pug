@@ -1,5 +1,5 @@
-mixin hero (title,  desc)
-	section.section.hero
+mixin hero (title,  desc, blog)
+	section(class=(blog ? "hero hero--blog" : "section hero"))
 		.hero__bg
 			img(src="./assets/img/water.jpg").hero__bg-img
 		- var socials = [ { item: 'vk', link: 'https://vk.com/id13047302'}, { item: 'github', link: 'https://github.com/3elik'}, {item:'in', link: 'https://www.linkedin.com/in/alex-herbut-277343106/'}]
@@ -14,14 +14,25 @@ mixin hero (title,  desc)
 			a(href="#").hamburger__link
 				svg.hamburger__img
 					use(xlink:href=`./assets/img/sprite.svg#hamburger`)
-		.hero__container
-			svg.hero__container-img
-				use(xlink:href=`./assets/img/sprite.svg#portfolio_header`)
-			.hero_user.user
-				.user__img-wrapper
-					img(src=`./assets/img/hello_photo.jpg`).user__img
-				h1.user__name #{title}
-				h2.user__description #{desc}
-		.arrow-down
-			svg.arrow-down__img
-				use(xlink:href=`./assets/img/sprite.svg#arrow_down`)
+		if !blog
+			.hero__container
+				svg.hero__container-img
+					use(xlink:href=`./assets/img/sprite.svg#portfolio_header`)
+				.hero_user.user
+					.user__img-wrapper
+						img(src=`./assets/img/hello_photo.jpg`).user__img
+					h1.user__name #{title}
+					h2.user__description #{desc}
+			.arrow-down
+				svg.arrow-down__img
+					use(xlink:href=`./assets/img/sprite.svg#arrow_down`)
+		else
+			.hero__container
+				.hero_user.user
+					.user__img-wrapper.user__img-wrapper--blog
+						img(src=`./assets/img/hello_photo.jpg`).user__img
+					.hero-title
+						.hero-title__title #{title}
+						svg(viewBox="0 0 498.161 175.44").hero-title__bg
+							use(xlink:href=`./assets/img/sprite.svg#blog_header`)
+					.hero-title__description #{desc}
