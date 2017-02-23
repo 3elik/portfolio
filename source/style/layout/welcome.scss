@@ -1,0 +1,33 @@
+.welcome {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: url("../img/water.jpg");
+  background-size: cover;
+  color: $white;
+}
+
+.wrapper--welcome {
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.auth-button {
+  position: absolute;
+  top: 25px;
+  right: 100px;
+  width: 180px;
+  height: 45px;
+  padding-top: 9px;
+  @include rounded-btn($white, 45px);
+  box-sizing: border-box;
+  font-family: $r-m;
+  font-size: $regular-fs;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $light-green;
+    background-color: $green;
+  }
+}

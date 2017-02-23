@@ -1,0 +1,77 @@
+.hello {
+  width: 380px;
+  height: 395px;
+  @include centered();
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(#122620, 0.6);
+  color: $white;
+
+  &__header {
+    padding: 40px 0 10px;
+    text-align: center;
+  }
+
+  &__img {
+    width: 100%;
+
+    &-wrapper {
+      width: 140px;
+      height: 140px;
+      margin: auto;
+      border-radius: 100px;
+      overflow: hidden;
+    }
+  }
+
+  &__name {
+    font-family: $r-m;
+    font-size: $big-fs;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__description {
+    margin-bottom: 20px;
+    font-family: $r-r;
+    font-size: $regular-fs;
+    text-align: center;
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 0;
+    .buttons {
+      &__item {
+        float: left;
+        box-sizing: border-box;
+        border-right: 2px solid #a0b99e;
+        &--my-work {
+          width: 156px;
+        }
+        &--about {
+          width: 127px;
+        }
+        &--blog {
+          width: 97px;
+        }
+        &:last-child {
+          border-right: none;
+        }
+      }
+      &__link {
+        display: block;
+        padding: 10px 0;
+        text-align: center;
+        background-color: $green;
+        font-family: $r-m;
+        font-size: $regular-fs;
+        text-decoration: none;
+        color: $white;
+
+        &:hover {
+          background: #498039;
+        }
+      }
+    }
+  }
+}

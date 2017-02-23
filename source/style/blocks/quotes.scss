@@ -1,0 +1,49 @@
+.quotes {
+  position: relative;
+  width: 750px;
+  margin: 0 auto 70px;
+  @extend %clearfix;
+  &__part {
+    float: left;
+    width: 50%;
+    text-align: center;
+  }
+  &__photo {
+    @include centered('h');
+    max-width: 100%;
+    &-wrapper {
+      width: 75px;
+      height: 75px;
+      margin: 0 auto 20px;
+      border-radius: 75px;
+      overflow: hidden;
+      position: relative;
+    }
+    &--koval {
+      max-width: 150%;
+      top: -25%;
+    }
+  }
+  &__quote {
+    font-family: $r-i;
+    font-size: $regular-fs;
+    color: #5d5a55;
+    text-align: left;
+    margin-bottom: 25px;
+  }
+  &__author {
+    font-family: $r-bi;
+    font-size: $regular-fs;
+    color: $green;
+  }
+  &__occupation {
+    font-family: $r-i;
+    font-size: $regular-fs;
+    color: $grey;
+    &:before  {
+      content: "—";
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.figure {
+  position: relative;
+  &__triangle {
+    position: absolute;
+    height: 160px;
+    fill: $beige;
+    &--left {
+      width: 50%;
+      left: 0;
+      bottom: 100%;
+    }
+    &--right {
+      width: 50%;
+      right: 0;
+      bottom: 100%;
+    }
+  }
+}

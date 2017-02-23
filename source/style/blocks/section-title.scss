@@ -1,0 +1,35 @@
+.section__title {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  margin-top: -20px;
+  vertical-align: top;
+  &:after {
+    content: "";
+    display: block;
+    border-bottom: 3px solid $dark-green;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 100px;
+  }
+  &-title {
+    position: relative;
+    padding: 40px 80px;
+    color: $dark-green;
+    font-family: $sansus;
+    font-size: $header-fs;
+    text-align: center;
+    z-index: 1;
+    text-transform: uppercase;
+  }
+  &-bg {
+    height: 100%;
+    @include centered();
+    top: 35%;
+    fill: #e2ebd0;
+    z-index: 0;
+  }
+}

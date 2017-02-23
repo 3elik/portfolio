@@ -1,0 +1,64 @@
+section.section.section-works
+	.figure
+		svg(viewBox="0 0 1000 160" preserveAspectRatio="none").figure__triangle.figure__triangle--left
+			polygon(points="0,0 0,160 1000,160")
+		svg(viewBox="0 0 1000 160" preserveAspectRatio="none").figure__triangle.figure__triangle--right
+			polygon(points="0,160 1000,160 1000,0")
+	.my-works
+		.my-works__title
+			.my-works__title-title Мои работы
+			svg(viewBox="0 0 498.161 175.44").my-works__title-bg
+				use(xlink:href=`./assets/img/sprite.svg#works_header`)
+section.examples
+	.examples__part.examples__content
+		.examples__content-part
+			.examples__title Сайт школы онлайн образования
+			.examples__subtitle HTML, CSS, JAVASCRIPT
+			.examples__link-wrapper
+				a(href="#").examples__link
+					i(aria-hidden="true").fa.fa-link.examples__icon
+					| Посмотреть сайт
+	.examples__part.examples__preview
+		img(src="./assets/img/work-1.png").examples__preview-img
+	.examples__part.examples__slider.slider
+		.slider__part.slider__part--down
+			a(href="#").slider__arrow.slider__arrow--down
+				svg.slider__arrow-img.slider__arrow-img--down
+					use(xlink:href=`./assets/img/sprite.svg#arrow_down`)
+			img(src="./assets/img/work-2.png").slider__preview
+		.slider__part.slider__part--up
+			a(href="#").slider__arrow.slider__arrow--up
+				svg.slider__arrow-img.slider__arrow-img--up
+					use(xlink:href=`./assets/img/sprite.svg#arrow_down`)
+			img(src="./assets/img/work-3.png").slider__preview
+section.what_about
+	.what_about__title
+		.what_about__title-title Что обо мне говорят
+		svg(viewBox="0 0 498.161 175.44").what_about__title-bg
+			use(xlink:href=`./assets/img/sprite.svg#about_header`)
+	.what_about__quotes.quotes
+		.quotes__part.quotes__part--left
+			.quotes__photo-wrapper
+				img(src="./assets/img/photo2.jpg").quotes__photo.quotes__photo--koval
+			.quotes__quote Этот парень проходил обучение веб-разработке не где-то, а LoftSchool! 2 месяца только самых тяжелых испытаний и бессоных ночей!
+			.quotes__author Ковальчук Дмитрий
+			.quotes__occupation основатель LoftSchool
+		.quotes__part.quotes__part--right
+			.quotes__photo-wrapper
+				img(src="./assets/img/photo1.jpg").quotes__photo.quotes__photo--sabancev
+			.quotes__quote Этот код выдержит любые испытания. Только, пожалуйста, не загружайте сайт на слишком старых браузерах!
+			.quotes__author Сабанцев Владимир
+			.quotes__occupation преподаваль
+	.what_about__contact-me.contact-me
+		form.contact-me__form
+			.contact-me__title Связаться со мной
+			input(name="name" placeholder="Имя" type="text").contact-me__input--name.contact-me__input
+			input(name="email" placeholder="Email" type="email").contact-me__input--email.contact-me__input
+			textarea(name="msg" placeholder="Ваше сообщение").contact-me__input--msg.contact-me__input
+			.contact-me__footer
+				button(type="submit" value="submit").contact-me__submit.contact-me__button Отправить
+				button(type="reset" value="reset").contact-me__reset.contact-me__button Очистить
+	.arrow-box
+		a(href="#").arrow-box__link
+			svg.arrow-box__img
+				use(xlink:href=`./assets/img/sprite.svg#arrow_down`)

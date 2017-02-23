@@ -1,0 +1,20 @@
+.arrow-box {
+  position: relative;
+  margin-bottom: 70px;
+  text-align: center;
+  &__link {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__img {
+    height: 26px;
+    width: 26px;
+    fill:$white;
+    transform: rotate(180deg);
+  }
+}

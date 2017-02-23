@@ -1,0 +1,38 @@
+mixin hero (title,  desc, blog)
+	section(class=(blog ? "hero hero--blog" : "section hero"))
+		.hero__bg
+			img(src="./assets/img/water.jpg").hero__bg-img
+		- var socials = [ { item: 'vk', link: 'https://vk.com/id13047302'}, { item: 'github', link: 'https://github.com/3elik'}, {item:'in', link: 'https://www.linkedin.com/in/alex-herbut-277343106/'}]
+		.socials.socials--hero
+			ul.socials__list
+				each social in socials
+					li.socials__item
+						a(href=`${social.link}` class=`socials__link socials__link--${social.item}` target="_blank")
+							svg(class=`socials__img socials__img--${social.item}`)
+								use(xlink:href=`./assets/img/sprite.svg#${social.item}`)
+		.hamburger
+			a(href="#").hamburger__link
+				svg.hamburger__img
+					use(xlink:href=`./assets/img/sprite.svg#hamburger`)
+		if !blog
+			.hero__container
+				svg.hero__container-img
+					use(xlink:href=`./assets/img/sprite.svg#portfolio_header`)
+				.hero_user.user
+					.user__img-wrapper
+						img(src=`./assets/img/hello_photo.jpg`).user__img
+					h1.user__name #{title}
+					h2.user__description #{desc}
+			a(href="#").arrow-down
+				svg.arrow-down__img
+					use(xlink:href=`./assets/img/sprite.svg#arrow_down`)
+		else
+			.hero__container
+				.hero_user.user
+					.user__img-wrapper.user__img-wrapper--blog
+						img(src=`./assets/img/hello_photo.jpg`).user__img
+					.hero-title
+						.hero-title__title #{title}
+						svg(viewBox="0 0 498.161 175.44").hero-title__bg
+							use(xlink:href=`./assets/img/sprite.svg#blog_header`)
+					.hero-title__description #{desc}

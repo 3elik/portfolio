@@ -1,0 +1,46 @@
+.skills {
+  padding: 0 40px;
+  font-size: $regular-fs;
+  .block__title {
+    width: 300px;
+    margin: 0 auto 40px;
+    line-height: 3rem;
+  }
+  &__text {
+    margin-bottom: 50px;
+    font-family: $r-r;
+    font-size: $regular-fs;
+    color: $dark-green;
+  }
+  &-group {
+    &__title {
+      margin-bottom: 20px;
+      font-family: $r-m;
+      font-size: $big-fs;
+      color: $dark-green;
+    }
+  }
+  &-list {
+    margin-bottom: 40px;
+    &__item {
+      display: inline-block;
+      margin-right: 40px;
+    }
+  }
+}
+
+.skill {
+  position: relative;
+  &__title {
+    @include centered();
+    font-family: $r-m;
+    font-size: 14px;
+    color: $green;
+    text-align: center;
+  }
+  &__circle {
+    display: block;
+    fill: none;
+    stroke-width: 20;
+  }
+}
