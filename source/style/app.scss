@@ -3,6 +3,7 @@
 @import 'common/mixins';
 @import 'common/adjustment';
 @import 'common/sprite';
+@import 'blocks/copyright';
 /*** Welcome ***/
 @import 'layout/welcome';
 @import 'blocks/hello';
@@ -17,6 +18,7 @@
 @import 'blocks/footer';
 @import 'blocks/blockquote';
 @import 'blocks/hamburger';
+@import 'blocks/map';
 /*** Blog ***/
 @import 'layout/blog';
 @import 'blocks/figure';

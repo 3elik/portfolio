@@ -1,0 +1,11 @@
+.map {
+  height: 100vh;
+  position: relative;
+  margin-bottom: -185px;
+  overflow: hidden;
+  &__img {
+    @include centered();
+    min-width: 100%;
+    min-height: 100%;
+  }
+}

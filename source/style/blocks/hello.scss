@@ -7,6 +7,11 @@
   background: rgba(#122620, 0.6);
   color: $white;
 
+  @include phone {
+    width: 95%;
+    min-width: 300px;
+  }
+
   &__header {
     padding: 40px 0 10px;
     text-align: center;
@@ -40,19 +45,23 @@
   &__footer {
     position: absolute;
     bottom: 0;
+    left: 0;
+    right: 0;
     .buttons {
+      @extend %clearfix;
+      width: 100%;
       &__item {
         float: left;
         box-sizing: border-box;
         border-right: 2px solid #a0b99e;
         &--my-work {
-          width: 156px;
+          width: 42%;
         }
         &--about {
-          width: 127px;
+          width: 33%
         }
         &--blog {
-          width: 97px;
+          width: 25%;
         }
         &:last-child {
           border-right: none;
@@ -67,6 +76,10 @@
         font-size: $regular-fs;
         text-decoration: none;
         color: $white;
+
+        @include phone {
+          font-size: $small-sf;
+        }
 
         &:hover {
           background: #498039;

@@ -1,0 +1,12 @@
+.copyright {
+  &__author {
+    @include phone {
+      display: block;
+    }
+  }
+  &__delimeter {
+    @include phone {
+      display: none;
+    }
+  }
+}

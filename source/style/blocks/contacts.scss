@@ -1,9 +1,9 @@
 .contacts {
   width: 380px;
   height: 310px;
-  top: 215px;
   padding: 35px;
-  @include centered('h');
+  @include centered();
+  top: calc(50% - 185px/2);
   border-radius: 10px;
   opacity: 0.8;
   background: #f4f5f0;
