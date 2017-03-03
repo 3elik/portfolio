@@ -38,7 +38,7 @@ section.section.section-about
 											circle(r=`${r}` cx="60" cy="60" stroke="#74a163" transform="rotate(-90 60 60)" class="sector" stroke-dasharray=`${val} 300` stroke-opacity=`${opacity}`)
 										.skill__title #{dia.title}
 section.section.map
-	img(src="./assets/img/map.jpg").map__img
+	#map.map__img
 	.map__contacts.contacts
 		.contacts__title.block__title
 			| Контакты
@@ -50,3 +50,5 @@ section.section.map
 							use(xlink:href=`./assets/img/sprite.svg#${contact.item}`)
 					.contacts__text
 						| #{contact.text}
+
+script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgzNJwApxkDQRh0IWOzuq-u3mLLRYBNqQ")

@@ -9,8 +9,25 @@
   background: #f4f5f0;
   overflow: hidden;
 
+  @include tablet {
+    top: calc(50% - 320px/2);
+  }
+  @include phone {
+    position: static;
+    transform: none;
+    width: 100%;
+    padding: 30px;
+  }
+
+  &__list {
+    @include phone {
+      width: 80%;
+      margin: auto;
+    }
+  }
   &__item {
     margin-bottom: 13px;
+    display: table;
   }
 
   &__img {
@@ -22,7 +39,7 @@
     vertical-align: middle;
     &-wrapper {
       position: relative;
-      display: inline-block;
+      display: table-cell;
       width: 35px;
       height: 24px;
       vertical-align: middle;
@@ -30,7 +47,7 @@
   }
 
   &__text {
-    display: inline-block;
+    display: table-cell;
     font-family: $r-m;
     font-size: $regular-fs;
     color: #455a64;

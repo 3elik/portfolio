@@ -4,13 +4,33 @@
   width: 50%;
   padding: 0 10px;
   vertical-align: top;
+  @include desktop {
+    width: 100%;
+    padding: 0 80px;
+  }
+  @include tablet {
+    display: block;
+    width: 61%;
+    margin: auto;
+    padding: 0;
+  }
+  @include phone {
+    padding: 0;
+  }
   &__col {
     position: relative;
+    display: table-cell;
     width: 50%;
+    height: 100%;
     padding-top: 20px;
-    float: left;
+    @include tablet {
+      position: static;
+      display: block;
+      width: 100%;
+    }
     &--left {
       background: $yellow-light;
+      font-size:0;
       .about__triangle {
         fill: $yellow-light;
       }
@@ -19,6 +39,10 @@
       background: $yellow-ll;
       .about__triangle {
         fill: $yellow-ll;
+        right: 0;
+        @include tablet {
+          fill: $yellow-light;
+        }
       }
     }
   }
@@ -28,6 +52,18 @@
     width: 100%;
     bottom: 100%;
     height: 160px;
+
+    @include desktop {
+      height: 110px;
+    }
+    @include tablet {
+      height: 70px;
+      width: 50%;
+    }
+    @include phone {
+      height: 30px;
+      width: 50%;
+    }
   }
   &__img {
     width: 100%;
@@ -35,6 +71,13 @@
       padding: 10px;
       text-align: center;
       margin-bottom: 20px;
+
+      @include desktop {
+        padding: 0;
+      }
+      @include tablet {
+        margin-bottom: 40px;
+      }
     }
   }
 }
@@ -45,6 +88,9 @@
   z-index: 1;
   cursor: pointer;
   opacity: 0.7;
+  @include tablet {
+    bottom: 50px;
+  }
   &__img {
     fill: $white;
     width: 26px;
@@ -56,21 +102,29 @@
 }
 
 .section-about {
+  position: relative;
   @extend %clearfix;
-  font-size: 0px;
+  display: table;
   background: $yellow-light;
+  @include tablet {
+    padding-top: 40px;
+  }
 }
 
 .block {
   &__title {
     position: relative;
     margin-bottom: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     color: $dark-green;
     font-family: $sansus;
     font-size: $subheader-fs;
     text-align: center;
     text-transform: uppercase;
+    @include tablet {
+      margin-bottom: 10px;
+      font-size: $tablet-subheader-fs;
+    }
 
     &:after {
       content: "";
@@ -90,6 +144,14 @@
     color: $dark-green;
     p {
       padding-bottom: 20px;
+    }
+    @include tablet {
+      margin-bottom: 50px;
+    }
+    @include phone {
+      width: 95%;
+      margin:auto;
+      padding-bottom: 10px;
     }
   }
 }

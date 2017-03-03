@@ -1,46 +1,110 @@
 .skills {
-  padding: 0 40px;
+  padding-left: 40px;
   font-size: $regular-fs;
+  @include desktop {
+    padding-left: 35px;
+  }
+  @include tablet {
+    padding-top: 30px;
+    padding-left: 0;
+  }
   .block__title {
     width: 300px;
     margin: 0 auto 40px;
+    padding-bottom: 20px;
     line-height: 3rem;
+
+    @include desktop {
+      padding-bottom: 10px;
+    }
+    @include tablet {
+      margin-bottom: 10px;
+      width: 61%;
+    }
   }
   &__text {
     margin-bottom: 50px;
     font-family: $r-r;
     font-size: $regular-fs;
     color: $dark-green;
+    @include tablet {
+      width: 61%;
+      margin: 0 auto 50px;
+      font-size: $small-sf;
+    }
+    @include phone {
+      width: 95%;
+    }
   }
   &-group {
+    @include tablet {
+      text-align: center;
+    }
     &__title {
       margin-bottom: 20px;
       font-family: $r-m;
       font-size: $big-fs;
       color: $dark-green;
+      @include tablet {
+        font-size: $tablet-big-fs;
+      }
     }
   }
   &-list {
     margin-bottom: 40px;
+    @include phone {
+      text-align: center;
+      margin-bottom: 0;
+    }
     &__item {
       display: inline-block;
       margin-right: 40px;
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include desktop {
+        margin-right: 0px;
+        margin-left: 30px;
+      }
+      @include phone {
+        margin: 0 0 30px 0;
+        width: 45%;
+      }
     }
   }
 }
 
 .skill {
   position: relative;
+  @include desktop {
+    width: 110px;
+    height: 110px;
+  }
+  @include phone {
+    margin: auto;
+  }
   &__title {
     @include centered();
     font-family: $r-m;
     font-size: 14px;
     color: $green;
     text-align: center;
+    line-height: 1rem;
+    @include tablet {
+      font-size: $smaller-sf;
+    }
   }
   &__circle {
     display: block;
     fill: none;
     stroke-width: 20;
+
+    @include desktop {
+      position: absolute;
+      top: 45%;
+      left: 45%;
+      transform: scale(0.9) translate3d(-50%, -50%, 0);
+    }
   }
 }

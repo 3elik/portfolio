@@ -1,11 +1,14 @@
 .blockquote {
   color: $white;
+  font-size: $regular-fs;
+  opacity: 0.6;
+  @include tablet {
+    font-size: $small-sf;
+  }
   &__quote {
     font-family: $r-li;
-    font-size: $regular-fs;
   }
   &__author {
     font-family: $r-bi;
-    font-size: $regular-fs;
   }
 }

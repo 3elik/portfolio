@@ -13,6 +13,7 @@ mixin footer(quote, author)
 						a(href="./blog.html").footer__links-link Блог
 					li.footer__links-item
 						a(href="#").footer__links-link Авторизация
+					li.footer__links-item.footer__links-item--last
 				- var socials = [ { item: 'vk', link: 'https://vk.com/id13047302'}, { item: 'github', link: 'https://github.com/3elik'}, {item:'in', link: 'https://www.linkedin.com/in/alex-herbut-277343106/'}]
 				.socials.socials--footer
 					ul.socials__list
@@ -24,5 +25,8 @@ mixin footer(quote, author)
 			.footer__part.footer__part--quote.blockquote
 				p.blockquote__quote #{quote}
 				p.blockquote__author - #{author}
-		.footer__copyrights
-			p © Владимир Астахов | создано с любовью в LoftSchool | 2016
+		.footer__copyrights.copyright
+			p
+				span.copyright__author © Владимир Астахов
+				span.copyright__delimeter!= " | "
+				span.copyright__with-love создано с любовью в LoftSchool | 2016

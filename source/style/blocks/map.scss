@@ -1,11 +1,14 @@
 .map {
   height: 100vh;
   position: relative;
-  margin-bottom: -185px;
   overflow: hidden;
+  @include phone {
+    height: 1150px;
+  }
   &__img {
     @include centered();
-    min-width: 100%;
+    top: 40%;
+    min-width: 200%;
     min-height: 100%;
   }
 }
