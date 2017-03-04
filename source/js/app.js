@@ -5,6 +5,7 @@
 
 //map
 (function () {
+  if ($('#map').length < 1) return;
   // When the window has finished loading create our google map below
   google.maps.event.addDomListener(window, 'load', init);
 
@@ -201,4 +202,35 @@
       title: 'Snazzy!'
     });
   }
+})();
+
+//sidebar for tablet
+(function () {
+  $(document).ready(function () {
+    $('.sidebar__circle').on('click', function (e) {
+      var $this = $(this),
+        sidebar = $('.sidebar');
+      if(sidebar.hasClass('sidebar__circle--active')) {
+        sidebar
+          .animate({
+            'left' : '-90%'
+          })
+          .removeClass('sidebar__circle--active');
+        $('.container')
+          .animate({
+            'left': '0'
+          })
+      } else {
+        sidebar
+          .addClass('sidebar__circle--active')
+          .animate({
+            'left' : '0'
+          });
+        $('.container')
+          .animate({
+            'left' : '90%'
+          });
+      }
+    })
+  });
 })();

@@ -4,6 +4,15 @@
     position: absolute;
     height: 160px;
     fill: $beige;
+    @include desktop {
+      height: 110px;
+    }
+    @include tablet {
+      height: 70px;
+    }
+    @include phone {
+      height: 30px;
+    }
     &--left {
       width: 50%;
       left: 0;

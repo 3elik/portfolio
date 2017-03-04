@@ -1,0 +1,59 @@
+.article {
+  position: relative;
+  padding-bottom: 70px;
+  margin-bottom: 70px;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 680px;
+    bottom: 0;
+    left: 0;
+    border-bottom: 5px solid #ecebe4;
+  }
+  &:last-child {
+    padding-bottom: 0;
+    &:after {
+      border-bottom: none;
+    }
+  }
+  &s {
+    float: left;
+    width: calc(100% - 410px);
+    padding: 75px 100px 0;
+    @include desktop {
+      width: calc(100% - 310px);
+      padding: 75px 5% 0;
+    }
+    @include tablet {
+      width: 100%;
+      padding: 75px 25px 0;
+      float: none;
+    }
+    @include phone {
+      width: 95%;
+      padding:75px 0;
+      margin: auto;
+    }
+  }
+  &__title {
+    font-family: $sansus;
+    font-size: $subheader-fs;
+    color: $grey;
+    margin-bottom: 30px;
+    line-height: 1.42;
+  }
+  &__date {
+    font-family: $r-r;
+    font-size: $regular-fs;
+    color: $green;
+    margin-bottom: 30px;
+  }
+  &__content {
+    font-family: $r-r;
+    font-size: $regular-fs;
+    color: $grey;
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}

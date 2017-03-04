@@ -45,7 +45,6 @@
   }
   &-title {
     position: relative;
-    padding: 10px 150px;
     &__title {
       position: relative;
       padding: 40px 80px;
@@ -75,5 +74,28 @@
   }
   &--blog {
     height: 460px;
+    .hero-title {
+      &__title {
+        @include tablet {
+          font-size: $tablet-header-fs;
+          padding: 30px 0 20px;
+          margin-bottom: 20px;
+        }
+        @include phone {
+          font-size: $subheader-fs;
+        }
+      }
+      &__description {
+        @include tablet {
+          font-size: $small-sf;
+        }
+      }
+      &__bg {
+        opacity: 0.1;
+          width: 130%;
+          height: 180%;
+          top: 70%;
+      }
+    }
   }
 }
