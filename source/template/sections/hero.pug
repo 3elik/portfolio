@@ -1,7 +1,8 @@
 mixin hero (title,  desc, blog)
 	section(class=(blog ? "hero hero--blog" : "section hero"))
 		.hero__bg
-			img(src="./assets/img/water.jpg").hero__bg-img
+			.Background
+				canvas.Background-canvas
 		- var socials = [ { item: 'vk', link: 'https://vk.com/id13047302'}, { item: 'github', link: 'https://github.com/3elik'}, {item:'in', link: 'https://www.linkedin.com/in/alex-herbut-277343106/'}]
 		.socials.socials--hero
 			ul.socials__list
