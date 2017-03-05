@@ -13,6 +13,10 @@
       text-align: center;
       z-index: 1;
       text-transform: uppercase;
+      @include tablet {
+        font-size: $tablet-header-fs;
+        padding: 20px 0;
+      }
       &:after {
         content: "";
         display: block;
@@ -31,7 +35,7 @@
       height: 100%;
       @include centered();
       top: 40%;
-      fill: #e2ebd0;
+      fill: #eff4e2;
       z-index: 0;
     }
   }

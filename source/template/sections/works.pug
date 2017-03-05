@@ -10,6 +10,8 @@ section.section.section-works
 			svg(viewBox="0 0 498.161 175.44").my-works__title-bg
 				use(xlink:href=`./assets/img/sprite.svg#works_header`)
 section.examples
+	.examples__part.examples__preview
+		img(src="./assets/img/work-1.png").examples__preview-img
 	.examples__part.examples__content
 		.examples__content-part
 			.examples__title Сайт школы онлайн образования
@@ -18,8 +20,6 @@ section.examples
 				a(href="#").examples__link
 					i(aria-hidden="true").fa.fa-link.examples__icon
 					| Посмотреть сайт
-	.examples__part.examples__preview
-		img(src="./assets/img/work-1.png").examples__preview-img
 	.examples__part.examples__slider.slider
 		.slider__part.slider__part--down
 			a(href="#").slider__arrow.slider__arrow--down

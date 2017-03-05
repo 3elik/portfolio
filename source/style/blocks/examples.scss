@@ -3,6 +3,10 @@
   height: 700px;
   width: 100%;
   background-color: $beige;
+  @extend %clearfix;
+  @include tablet {
+    height: initial;
+  }
   &__title {
     position: relative;
     font-family: $sansus;
@@ -13,6 +17,11 @@
     line-height: 1.42;
     padding-bottom: 20px;
     margin-bottom: 25px;
+    @include tablet {
+      font-size: $tablet-subheader-fs;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
     &:after {
       content: '';
       position: absolute;
@@ -28,6 +37,9 @@
     font-size: $regular-fs;
     color: $green;
     margin-bottom: 50px;
+    @include tablet {
+      margin-bottom: 40px;
+    }
   }
   &__content {
     position: relative;
@@ -35,9 +47,15 @@
     width: 50%;
     height: 100%;
     background-color: $yellow-light;
+    @include tablet {
+      height: 270px;
+    }
     &-part {
       @include centered();
       width: 350px;
+      @include tablet {
+        width: 100%;
+      }
     }
   }
   &__preview {
@@ -46,8 +64,12 @@
     width: 50%;
     height: 70%;
     background-color: #e1e4d7;
+    @include tablet {
+      height: 530px;
+    }
     &-img {
       max-height: 85%;
+      max-width: 115%;
       @include centered();
     }
   }
@@ -55,6 +77,15 @@
     float: right;
     width: 50%;
     height: 30%;
+    @include tablet {
+      height: 215px;
+    }
+  }
+  &__part {
+    @include tablet {
+      width: 100%;
+      float: none;
+    }
   }
 
   &__link {

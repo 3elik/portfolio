@@ -6,6 +6,9 @@
   border-radius: 5px;
   overflow: hidden;
   background-color: rgba(#e0e0dc, 0.5);
+  @include phone {
+    width: 95%;
+  }
   &__title {
     position: relative;
     font-family: $sansus;
@@ -16,6 +19,10 @@
     line-height: 1.42;
     padding-bottom: 20px;
     margin-bottom: 30px;
+    @include phone {
+      font-size: $tablet-big-fs;
+      padding-bottom: 10px;
+    }
     &:after {
       content: '';
       @include centered('h');
@@ -37,11 +44,18 @@
     font-family: $r-r;
     font-size: $regular-fs;
     color: #5d5a55;
+    resize: none;
+    @include phone {
+      font-size: $small-sf;
+    }
 
     @include placeholder {
       font-family: $r-r;
       font-size: $regular-fs;
       color: #5d5a55;
+      @include phone {
+        font-size: $small-sf;
+      }
     }
     &--msg {
       min-height: 140px;

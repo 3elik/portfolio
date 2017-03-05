@@ -3,8 +3,10 @@
   background-image: url("../img/what_about.jpg");
   background-size: cover;
   background-position: center top;
-  padding: 35px 0 185px;
-  margin-bottom: -185px;
+  padding: 35px 0 215px;
+  @include tablet {
+    padding: 55px 0 375px;
+  }
   &__title {
     position: relative;
     display: block;
@@ -13,6 +15,10 @@
     margin: 0 auto 40px;
     line-height: 1.42;
     text-align: center;
+    @include tablet {
+      width: initial;
+      height: initial;
+    }
     &-title {
       position: relative;
       padding: 10px 80px;
@@ -22,6 +28,10 @@
       text-align: center;
       z-index: 1;
       text-transform: uppercase;
+      @include tablet {
+        font-size: $tablet-header-fs;
+        line-height: 1.2;
+      }
       &:after {
         content: "";
         display: block;
@@ -42,6 +52,9 @@
       top: 40%;
       fill: #e2ebd0;
       z-index: 0;
+      @include tablet {
+        top: 20%;
+      }
     }
   }
 }
