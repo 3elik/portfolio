@@ -107,4 +107,7 @@
       transform: scale(0.9) translate3d(-50%, -50%, 0);
     }
   }
+  &__sector {
+    transition: all 1s linear;
+  }
 }

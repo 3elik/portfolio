@@ -35,7 +35,7 @@ section.section.section-about
 											- var opacity = dia.value / 100;
 											- var val = r * opacity * 2 * Math.PI;
 											circle(r=`${r}` cx="60" cy="60" stroke="#dfdcd5" fill="none")
-											circle(r=`${r}` cx="60" cy="60" stroke="#74a163" transform="rotate(-90 60 60)" class="sector" stroke-dasharray=`${val} 300` stroke-opacity=`${opacity}`)
+											circle(r=`${r}` cx="60" cy="60" stroke="#74a163" transform="rotate(-90 60 60)" class="skill__sector" stroke-dasharray='0 300' data-stroke-dasharray=`${val} 300` stroke-opacity="0" data-stroke-opacity=`${opacity}`)
 										.skill__title #{dia.title}
 section.section.map
 	#map.map__img
