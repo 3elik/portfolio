@@ -34,12 +34,18 @@
     font-size: $big-fs;
     text-align: center;
     margin-bottom: 10px;
+    @include phone {
+      font-size: $phone-subheader-fs;
+    }
   }
   &__description {
     margin-bottom: 20px;
     font-family: $r-r;
     font-size: $regular-fs;
     text-align: center;
+    @include phone {
+      font-size: $smaller-sf;
+    }
   }
 
   &__footer {

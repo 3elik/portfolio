@@ -31,6 +31,13 @@
       @include tablet {
         font-size: $tablet-header-fs;
         line-height: 1.2;
+        padding: 10px;
+        width: 400px;
+        margin: auto;
+      }
+      @include phone {
+        font-size: $subheader-fs;
+        padding: 10px;
       }
       &:after {
         content: "";
@@ -52,8 +59,9 @@
       top: 40%;
       fill: #e2ebd0;
       z-index: 0;
-      @include tablet {
-        top: 20%;
+      @include tablet{
+        height: initial;
+        width: 50%;
       }
     }
   }

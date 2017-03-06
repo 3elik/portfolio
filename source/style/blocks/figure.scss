@@ -1,5 +1,8 @@
 .figure {
   position: relative;
+  @include tablet {
+    bottom: -1px;
+  }
   &__triangle {
     position: absolute;
     height: 160px;

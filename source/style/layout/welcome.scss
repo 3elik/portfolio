@@ -5,6 +5,7 @@
   //background-image: url("../img/water.jpg");
   //background-size: cover;
   color: $white;
+  overflow: hidden;
 }
 
 .wrapper--welcome {
@@ -34,5 +35,6 @@
   @include phone {
     right: initial;
     @include centered('h');
+    font-size: $smaller-sf;
   }
 }

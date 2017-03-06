@@ -16,6 +16,7 @@
   }
   @include phone {
     padding: 0;
+    width: 95%;
   }
   &__col {
     position: relative;
@@ -57,6 +58,7 @@
       height: 110px;
     }
     @include tablet {
+      bottom: calc(100% - 1px);
       height: 70px;
       width: 50%;
     }
