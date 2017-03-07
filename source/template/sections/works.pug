@@ -11,13 +11,13 @@ section.section.section-works
 				use(xlink:href=`./assets/img/sprite.svg#works_header`)
 section.examples
 	.examples__part.examples__preview
-		img(src="./assets/img/work-1.png").examples__preview-img
+		img(src=`${works[0].img}`).examples__preview-img
 	.examples__part.examples__content
 		.examples__content-part
-			.examples__title Сайт школы онлайн образования
-			.examples__subtitle HTML, CSS, JAVASCRIPT
+			.examples__title #{works[0].title}
+			.examples__subtitle #{works[0].technologies}
 			.examples__link-wrapper
-				a(href="#").examples__link
+				a(href=`${works[0].link}`).examples__link
 					i(aria-hidden="true").fa.fa-link.examples__icon
 					| Посмотреть сайт
 	.examples__part.examples__slider.slider
@@ -25,12 +25,20 @@ section.examples
 			a(href="#").slider__arrow.slider__arrow--down
 				svg.slider__arrow-img.slider__arrow-img--down
 					use(xlink:href=`./assets/img/sprite.svg#arrow_down`)
-			img(src="./assets/img/work-2.png").slider__preview
+			each work, index in works
+				- var active = ""
+				if index == ( works.length - 1 )
+					- active = "slider__preview--active"
+				img(src=`${work.img}` class=`slider__preview ${active}` data-title=`${work.title}` data-tech=`${work.technologies}` data-href=`${work.link}`)
 		.slider__part.slider__part--up
 			a(href="#").slider__arrow.slider__arrow--up
 				svg.slider__arrow-img.slider__arrow-img--up
 					use(xlink:href=`./assets/img/sprite.svg#arrow_down`)
-			img(src="./assets/img/work-3.png").slider__preview
+			each work, index in works
+				- var active = ""
+				if index == 1
+					- active = "slider__preview--active"
+				img(src=`${work.img}` class=`slider__preview ${active}` data-title=`${work.title}` data-tech=`${work.technologies}` data-href=`${work.link}`)
 section.what_about
 	.what_about__title
 		.what_about__title-title Что обо мне говорят

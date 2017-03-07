@@ -9,6 +9,9 @@
     opacity: 0.5;
     &:hover {
       opacity: 1;
+      .arrow-box__img {
+        top: -15px;
+      }
     }
   }
   &__img {
@@ -16,5 +19,8 @@
     width: 26px;
     fill:$white;
     transform: rotate(180deg);
+    position: relative;
+    top:0;
+    transition: top .4s ease-in-out;
   }
 }
