@@ -49,6 +49,7 @@
     }
   }
   &--open {
+    position: fixed;
     span {
       &:nth-child(1) {
         transform: rotate(45deg);
