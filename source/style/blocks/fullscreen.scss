@@ -35,5 +35,11 @@
     color: $white;
     text-decoration: none;
     text-transform: uppercase;
+    @include tablet {
+      font-size: $tablet-header-fs;
+    }
+    @include phone {
+      font-size: $subheader-fs;
+    }
   }
 }
