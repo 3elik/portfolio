@@ -416,8 +416,24 @@ var slider = (function () {
   }
 })();
 
+var hamburger = (function () {
+  var hamburger = $('.hamburger'),
+    fullscreen = $('.fullscreen');
+
+  return {
+    init: function () {
+      $('.hamburger__link').on('click', function (e) {
+        e.preventDefault();
+        hamburger.toggleClass('hamburger__icon--open');
+        fullscreen.fadeToggle();
+      })
+    }
+  }
+})();
+
 
 $(function () {
   preloader.init();
   slider.init();
+  hamburger.init();
 });

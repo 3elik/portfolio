@@ -1,0 +1,39 @@
+.fullscreen {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba($sidebar-bg, 0.9);
+  z-index: 10;
+
+  &__list {
+    @include centered();
+    text-align: center;
+  }
+  &__item {
+    margin-bottom: 90px;
+    &--linked {
+      .fullscreen__link {
+        &::after {
+          content: '';
+          @include centered('h');
+          bottom: 0;
+          width: 90px;
+          height: 3px;
+          background-color: $white;
+        }
+      }
+    }
+  }
+  &__link {
+    position: relative;
+    padding-bottom: 20px;
+    font-family: $sansus;
+    font-size: $header-fs;
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
