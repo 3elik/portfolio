@@ -1,36 +1,5 @@
 $(document).ready(function () {
 
-  //sidebar for tablet
-  (function () {
-    $(document).ready(function () {
-      $('.sidebar__circle').on('click', function (e) {
-        var $this = $(this),
-          sidebar = $('.sidebar');
-        if(sidebar.hasClass('sidebar__circle--active')) {
-          sidebar
-            .animate({
-              'left' : '-90%'
-            })
-            .removeClass('sidebar__circle--active');
-          $('.container')
-            .animate({
-              'left': '0'
-            })
-        } else {
-          sidebar
-            .addClass('sidebar__circle--active')
-            .animate({
-              'left' : '0'
-            });
-          $('.container')
-            .animate({
-              'left' : '90%'
-            });
-        }
-      })
-    });
-  })();
-
   //skills
   var skills = function () {
     var skillItems = $('.skill__circle .skill__sector');
@@ -258,4 +227,6 @@ $(function () {
   preloader.init();
   slider.init();
   hamburger.init();
+  sidebar.init();
+  sticky_sidebar.init();
 });

@@ -7,22 +7,17 @@
     width: 310px;
   }
   @include tablet {
-    margin-left: -310px;
-  }
-  @include phone {
     position: fixed;
     top: 0;
     bottom: 0;
-    left: -90%;
-    width: 90%;
+    right: 100vw;
+    width: initial;
     margin-left: 0;
     background-color: $sidebar-bg;
     z-index: 1;
     &__circle {
       position: absolute;
-      top: 50%;
-      right: -10px;
-      transform: translateY(-50%);
+      right: 5px;
       background: #6c9c5a;
       height: 60px;
       width: 60px;
@@ -30,14 +25,25 @@
       box-shadow: 0px 0px 5px 5px #cccccc;
       cursor: pointer;
       z-index: -1;
+      &-wrapper {
+        position: absolute;
+        top: 50%;
+        right: -19px;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 60px;
+        overflow: hidden;
+      }
     }
   }
 
   &__list {
     @extend %clearfix;
-    @include phone {
+    @include tablet {
       height: 100%;
       background-color: #6c9c5a;
+      width: 30%;
+      float: right;
     }
   }
 
@@ -58,7 +64,7 @@
     float: right;
     &--active {
       border-right: 3px solid $green;
-      @include phone {
+      @include tablet {
         border-right: none;
       }
 

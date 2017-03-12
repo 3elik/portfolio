@@ -1,0 +1,8 @@
+aside.sidebar.js-sidebar
+	ul.sidebar__list
+		each article in blog.articles
+			- var active = (article.id == 4 ? "sidebar__item--active": "")
+			li(class=`sidebar__item ${active}` id=`sidebar__item-${article.id}`)
+				a(href="#" class=`sidebar__link js-sidebar__link` data-href=`#article-${article.id}`) #{article.title}
+	.sidebar__circle-wrapper
+		.sidebar__circle

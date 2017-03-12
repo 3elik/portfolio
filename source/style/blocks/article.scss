@@ -1,7 +1,6 @@
 .article {
   position: relative;
-  padding-bottom: 70px;
-  margin-bottom: 70px;
+  padding: 70px 0;
   &:after {
     content: "";
     position: absolute;
@@ -10,8 +9,10 @@
     left: 0;
     border-bottom: 5px solid #ecebe4;
   }
+  &:first-child {
+    padding: 0 0 70px 0;
+  }
   &:last-child {
-    padding-bottom: 0;
     &:after {
       border-bottom: none;
     }

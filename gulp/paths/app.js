@@ -1,6 +1,8 @@
 'use strict';
 
 module.exports = [
+  './source/js/sticky_sidebar.js',
+  './source/js/sidebar.js',
   './source/js/preloader.js',
   './source/js/hamburger.js',
   './source/js/slider.js',
