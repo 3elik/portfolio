@@ -5,6 +5,7 @@ var sticky_sidebar = (function () {
   var sbi = $(".sidebar__list");
   return {
     init: function () {
+      if (!sb.length) return;
       $(window).scroll(function() {
         var st = $(window).scrollTop();
         var sb_ot = sb.offset().top;
