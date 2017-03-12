@@ -416,22 +416,6 @@ var slider = (function () {
   }
 })();
 
-var hamburger = (function () {
-  var hamburger = $('.hamburger'),
-    fullscreen = $('.fullscreen');
-
-  return {
-    init: function () {
-      $('.hamburger__link').on('click', function (e) {
-        e.preventDefault();
-        hamburger.toggleClass('hamburger--open');
-        fullscreen.fadeToggle();
-      })
-    }
-  }
-})();
-
-
 $(function () {
   preloader.init();
   slider.init();
