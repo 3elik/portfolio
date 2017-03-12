@@ -1,4 +1,4 @@
-.Background {
+.background {
   position: absolute;
   top: 0;
   left: 0;
@@ -6,6 +6,9 @@
   width: 150%;
   @include centered();
   overflow: hidden;
+  background-image: url("../img/water.jpg");
+  background-size: cover;
+  background-position: center;
   &::after {
     content: '';
     position: absolute;

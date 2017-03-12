@@ -62,8 +62,8 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var divSelector = '.Background';
-	var canvasSelector = '.Background-canvas';
+	var divSelector = '.background';
+	var canvasSelector = '.js-canvas';
 	var filePath = './assets/img/water.jpg';
 	var fileMapsPath = './assets/img/water-maps.jpg';
 	
