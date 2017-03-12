@@ -9,17 +9,19 @@ section.section.section-about
 		.about
 			.about__img-wrapper
 				img(src="./assets/img/hello_photo.jpg").about__img
-			.block__title
-				| Кто я
-			.block__text
-				p #{about.text.p1}
-				p #{about.text.p2}
+			.block
+				.block__title
+					| Кто я
+				.block__text
+					p #{about.text.p1}
+					p #{about.text.p2}
 	.about__col.about__col--right
 		svg(viewBox="0 0 1000 160" preserveAspectRatio="none").about__triangle
 			polygon(points="0,160 1000,160 1000,0")
 		.skills
-			.block__title
-				| Чем я могу быть Вам полезен
+			.block
+				.block__title
+					| Чем я могу быть Вам полезен
 			.skills__text
 				p #{about.skills.text}
 			ul.skills-group
@@ -39,7 +41,7 @@ section.section.section-about
 										.skill__title #{dia.title}
 section.section.map
 	#map.map__img
-	.map__contacts.contacts
+	.map__contacts.contacts.block
 		.contacts__title.block__title
 			| Контакты
 		ul.contacts__list

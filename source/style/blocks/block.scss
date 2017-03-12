@@ -1,0 +1,44 @@
+.block {
+  &__title {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    color: $dark-green;
+    font-family: $sansus;
+    font-size: $subheader-fs;
+    text-align: center;
+    text-transform: uppercase;
+    @include tablet {
+      margin-bottom: 10px;
+      font-size: $tablet-subheader-fs;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      border-bottom: 3px solid $dark-green;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 2px;
+      width: 100px;
+    }
+  }
+  &__text {
+    font-family: $r-r;
+    font-size: $regular-fs;
+    color: $dark-green;
+    p {
+      padding-bottom: 20px;
+    }
+    @include tablet {
+      margin-bottom: 50px;
+    }
+    @include phone {
+      width: 95%;
+      margin:auto;
+      padding-bottom: 10px;
+    }
+  }
+}
