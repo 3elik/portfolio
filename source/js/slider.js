@@ -41,7 +41,19 @@ var slider = (function () {
       activeItem = items.filter('.slider__preview--active'),
       index = items.index(activeItem) - 1,
       fadedOut = $.Deferred(),
-      loaded = $.Deferred();
+      loaded = $.Deferred(),
+      indexText = 0,
+      symbols;
+
+    var showText = function () {
+      symbols.eq(indexText).addClass('symbols__wrapper--visibled');
+      if (indexText<=title.length) {
+        setTimeout(showText, 100);
+        indexText++;
+      } else {
+        indexText = 0;
+      }
+    };
 
     if (direction == 'down') {
       index--;
@@ -57,7 +69,22 @@ var slider = (function () {
     showEl.fadeOut(function () {
       fadedOut.resolve();
       titleEl.fadeOut(duration, function () {
-        titleEl.text(title);
+        titleEl.text('');
+        var word = $('<div class="symbols__word"></div>');
+        for(var i = 0; i<=title.length -1; i++) {
+          var char = title.charAt(i);
+          if (char != ' ') {
+            word.append($('<div class="symbols__wrapper"><span class="symbols__symbol">' + char + '</span></div>'));
+          } else {
+            titleEl.append(word);
+            word = $('<div class="symbols__word"></div>');
+          }
+
+        }
+
+        titleEl.append(word);
+        symbols = $('.symbols__wrapper');
+        showText();
       });
       techEl.fadeOut(duration, function () {
         techEl.text(tech);
@@ -76,7 +103,7 @@ var slider = (function () {
       titleEl.fadeIn();
       techEl.fadeIn();
       loading = false;
-    })
+    });
   };
 
   return {

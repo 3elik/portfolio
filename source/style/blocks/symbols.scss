@@ -1,0 +1,68 @@
+.symbol {
+  &s {
+    &__wrapper {
+      display: inline-block;
+      vertical-align: middle;
+      opacity:0;
+      &--visibled {
+        animation: symbol 1s ease;
+        opacity: 1;
+        font-size: $subheader-fs;
+        @include tablet {
+          font-size: $tablet-subheader-fs;
+        }
+        @include phone {
+          font-size: $phone-subheader-fs;
+        }
+      }
+    }
+    &__word {
+      display: inline-block;
+      margin-right: 7px;
+    }
+  }
+}
+
+@keyframes symbol {
+  0% {
+    opacity: 0;
+    transform: matrix(1, 0, 0, 0.5, 0, 0);
+  }
+  5% {
+    opacity: 0.2;
+    transform: matrix(1, 0, 0, 0.6, 0, 0);
+  }
+  10% {
+    opacity: 0.4;
+    transform: matrix(1, 0, 0, 0.7, 0, 0);
+  }
+  15% {
+    opacity: 0.6;
+    transform: matrix(1, 0, 0, 0.8, 0, 0);
+  }
+  20% {
+    opacity: 0.8;
+    transform: matrix(1, 0, 0, 0.9, 0, 0);
+  }
+  23% {
+    opacity: 0.9;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+  25% {
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1.1, 0, 0);
+  }
+  40% {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+  60% {
+    transform: matrix(1, 0, 0, 0.9, 0, 0);
+  }
+  80% {
+    transform: matrix(1, 0, 0, 1.05, 0, 0);
+  }
+  100% {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+}
