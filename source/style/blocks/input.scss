@@ -1,14 +1,18 @@
 .input {
+  position: relative;
   width: 100%;
   margin-bottom: 20px;
-  border-radius: 100px;
-  overflow: hidden;
+  outline: none;
   @extend %clearfix;
   &--error {
     .input__icon,
     .input__input {
       color: $red;
       border-color: $red;
+    }
+    .input__error {
+      opacity: 1;
+      display: block;
     }
   }
   &--success {
@@ -18,7 +22,19 @@
       border-color: $light-green;
     }
   }
-
+  &__icon {
+    @include centered();
+    left: 55%;
+    color: #c4cbcd;
+    &-wrapper {
+      float: left;
+      position: relative;
+      width: 45px;
+      height: 45px;
+      background-color: #f0efe9;
+      border-radius: 50px 0 0 50px;
+    }
+  }
   &__input {
     float: right;
     width: calc(100% - 45px);
@@ -36,100 +52,31 @@
         font-size: $small-sf;
       }
     }
-    &-wrapper {
-      display: block;
-      width: 100%;
-      text-align: center;
-      &--radio {
-        display: inline-block;
-        width: 50%;
-        float: left;
-      }
-    }
   }
-  &__icon {
-    @include centered();
-    left: 55%;
-    color: #c4cbcd;
-    &-wrapper {
-      float: left;
-      position: relative;
-      width: 45px;
-      height: 45px;
-      background-color: #f0efe9;
-    }
-  }
-  &__checkbox {
+  &__error {
+    position: absolute;
     display: none;
-    &:checked {
-      + .input__label {
-        &:before {
-          content: "\f00c";
-          background: $light-green;
-          border-color:  $light-green;
-        }
-      }
-    }
-  }
-  &__group {
+    padding: 15px 20px;
+    top: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    background-color: #e44845;
     text-align: center;
-    @extend %clearfix;
-  }
-  &__radio {
-    display: none;
-    + .input__label {
-      &:before {
-        border-radius: 50px;
-      }
-    }
-    &:checked {
-      & + .input__label {
-        &:before {
-          content: "";
-          background: $white;
-          border-color: #cccccc;
-        }
-        &:after {
-          content: "";
-          @include centered('v');
-          left: 6px;
-          height: 8px;
-          width: 8px;
-          background-color: $light-green;
-          border-radius: 10px;
-          overflow: hidden;
-        }
-      }
-    }
-  }
-  &__label {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 10px;
-    padding-left: 30px;
-    font-family: $r-r;
-    font-size: $regular-fs;
-    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .3s;
+    white-space: nowrap;
     &:before {
       content: '';
-      @include centered('v');
-      left: 0;
-      height: 20px;
-      width: 20px;
-      border: 1px solid #cccccc;
-      border-radius: 2px;
-      box-sizing: border-box;
-      background: white;
-      font: normal normal normal 14px/1 FontAwesome;
-      font-size: inherit;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
+      display: block;
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      top: -7px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      background: $red;
     }
-  }
-  &__p {
-    font-family: $r-r;
-    font-size: $regular-fs;
-    text-align: center;
-    margin-bottom: 10px;
   }
 }

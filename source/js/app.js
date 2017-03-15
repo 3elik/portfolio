@@ -229,4 +229,5 @@ $(function () {
   hamburger.init();
   sidebar.init();
   sticky_sidebar.init();
+  auth.init();
 });

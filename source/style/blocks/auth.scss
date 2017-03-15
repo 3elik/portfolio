@@ -1,6 +1,6 @@
 .auth {
   width: 380px;
-  height: 425px;
+  height: 445px;
   perspective: 500px;
 
   @include phone {
@@ -88,6 +88,34 @@
           background: #498039;
         }
       }
+    }
+  }
+
+
+
+  &-button {
+    position: absolute;
+    top: 25px;
+    right: 100px;
+    width: 180px;
+    height: 45px;
+    padding-top: 9px;
+    @include rounded-btn($white, 45px);
+    box-sizing: border-box;
+    font-family: $r-m;
+    font-size: $regular-fs;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+
+    &:hover {
+      border-color: $light-green;
+      background-color: $green;
+    }
+    @include phone {
+      right: initial;
+      @include centered('h');
+      font-size: $smaller-sf;
     }
   }
 }

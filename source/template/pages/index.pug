@@ -8,62 +8,43 @@ block content
 		include ../sections/preloader
 		.section.welcome
 			include ../sections/background
-			a.auth-button Авторизоваться
-		.modal
-			.modal__face.hello
-				.hello__wrapper
-					header.hello__header
-						.hello__img-wrapper
-							img(src=`./assets/img/hello_photo.jpg`).hello__img
-					h1.hello__name Константин Константинов
-					h2.hello__description Личный сайт веб разработчика
-					.hello__socials
-					- var socials = [ { item: 'vk', link: 'https://vk.com/id13047302'}, { item: 'github', link: 'https://github.com/3elik'}, {item:'in', link: 'https://www.linkedin.com/in/alex-herbut-277343106/'}]
-					.socials
-						ul.socials__list
-							each social in socials
-								li.socials__item
-									a(href=`${social.link}` class=`socials__link socials__link--${social.item}` target="_blank")
-										svg(class=`socials__img socials__img--${social.item}`)
-											use(xlink:href=`./assets/img/sprite.svg#${social.item}`)
-					footer.hello__footer
-						ul.buttons
-							li.buttons__item.buttons__item--my-work
-								a(href="./works.html").buttons__link Мои работы
-							li.buttons__item.buttons__item--about
-								a(href="./about.html").buttons__link Обо мне
-							li.buttons__item.buttons__item--blog
-								a(href="./blog.html").buttons__link Блог
-			.modal__back.auth
-				.auth__wrapper
-					.auth__title
-						| Авторизуйтесь
-					form(method="post" action="").auth__form
-						.auth__input.input
-							.input__icon-wrapper
-								i(class="fa fa-user input__icon" aria-hidden="true")
-							input(name="login" placeholder="Логин" type="text").auth__login.input__input
-						.auth__input.input
-							.input__icon-wrapper
-								i(class="fa fa-key input__icon" aria-hidden="true")
-							input(name="pass" placeholder="Пароль" type="password").input__pass.input__input
-						.input__input-wrapper.input__input-wrapper--check
-							input(type="checkbox" name="is_human").input__checkbox.auth__is-human#is_human
-							label(for="is_human").input__label Я человек
-						p.input__p Вы точно не робот
-						.input__group
-							.input__input-wrapper.input__input-wrapper--radio
-								input(type="radio" name="sure" value="yes" group="sure").input__radio.input__radio--yes#sure_yes
-								label(for="sure_yes").input__label Да
-							.input__input-wrapper.input__input-wrapper--radio
-								input(type="radio" name="sure" value="no" group="sure").input__radio.input__radio--yes#sure_no
-								label(for="sure_no").input__label Не уверен
-					footer.auth__footer
-						ul.buttons
-							li.buttons__item.buttons__item--my-work
-								a(href="#").buttons__link На главную
-							li.buttons__item.buttons__item--about
-								a(href="#").buttons__link Войти
+			a.auth-button.js-auth-button Авторизоваться
+			.modal.js-modal
+				.modal__face.hello
+					.hello__wrapper
+						header.hello__header
+							.hello__img-wrapper
+								img(src=`./assets/img/hello_photo.jpg`).hello__img
+						h1.hello__name Константин Константинов
+						h2.hello__description Личный сайт веб разработчика
+						.hello__socials
+						- var socials = [ { item: 'vk', link: 'https://vk.com/id13047302'}, { item: 'github', link: 'https://github.com/3elik'}, {item:'in', link: 'https://www.linkedin.com/in/alex-herbut-277343106/'}]
+						.socials
+							ul.socials__list
+								each social in socials
+									li.socials__item
+										a(href=`${social.link}` class=`socials__link socials__link--${social.item}` target="_blank")
+											svg(class=`socials__img socials__img--${social.item}`)
+												use(xlink:href=`./assets/img/sprite.svg#${social.item}`)
+						footer.hello__footer
+							ul.buttons
+								li.buttons__item.buttons__item--my-work
+									a(href="./works.html").buttons__link Мои работы
+								li.buttons__item.buttons__item--about
+									a(href="./about.html").buttons__link Обо мне
+								li.buttons__item.buttons__item--blog
+									a(href="./blog.html").buttons__link Блог
+				.modal__back.auth
+					.auth__wrapper
+						.auth__title
+							| Авторизуйтесь
+						include ../sections/form
+						footer.auth__footer
+							ul.buttons
+								li.buttons__item.buttons__item--my-work
+									a(href="#").buttons__link.js-to-main На главную
+								li.buttons__item.buttons__item--about
+									a(href="#").buttons__link.js-enter Войти
 	footer.footer.footer--welcome
 		.copyright
 			p

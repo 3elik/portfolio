@@ -1,0 +1,24 @@
+form(method="post" action="").auth__form.js-auth-form.form
+	.form__input.input
+		.input__icon-wrapper
+			i(class="fa fa-user input__icon" aria-hidden="true")
+		input(name="login" placeholder="Логин" type="text").form__login.input__input
+		.input__error
+	.form__input.input
+		.input__icon-wrapper
+			i(class="fa fa-key input__icon" aria-hidden="true")
+		input(name="pass" placeholder="Пароль" type="password").form__pass.input__input
+		.input__error
+	.form__input-wrapper.form__input-wrapper--check.input
+		input(type="checkbox" name="is_human").form__checkbox.form__is-human#is_human
+		label(for="is_human").form__label Я человек
+		.input__error
+	p.form__p Вы точно не робот?
+	.form__group.input
+		.form__input-wrapper.form__input-wrapper--radio
+			input(type="radio" name="sure" value="yes" group="sure").form__radio.form__radio--yes.form__radio--sure#sure_yes
+			label(for="sure_yes").form__label Да
+		.form__input-wrapper.form__input-wrapper--radio
+			input(type="radio" name="sure" value="no" group="sure").form__radio.form__radio--yes.form__radio--sure#sure_no
+			label(for="sure_no").form__label Не уверен
+		.input__error
