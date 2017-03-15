@@ -9,7 +9,12 @@ block content
 		.section.welcome
 			include ../sections/background
 			a.auth-button.js-auth-button Авторизоваться
-			.modal.js-modal
+			- var classMove = ''
+			if auth == true
+				- classMove = 'modal--back'
+			else
+				- classMove = ''
+			div(class=`modal js-modal ${classMove}`)
 				.modal__face.hello
 					.hello__wrapper
 						header.hello__header
@@ -28,11 +33,11 @@ block content
 						footer.hello__footer
 							ul.buttons
 								li.buttons__item.buttons__item--my-work
-									a(href="./works.html").buttons__link Мои работы
+									a(href="./works").buttons__link Мои работы
 								li.buttons__item.buttons__item--about
-									a(href="./about.html").buttons__link Обо мне
+									a(href="./about").buttons__link Обо мне
 								li.buttons__item.buttons__item--blog
-									a(href="./blog.html").buttons__link Блог
+									a(href="./blog").buttons__link Блог
 				.modal__back.auth
 					.auth__wrapper
 						.auth__title
