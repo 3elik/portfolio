@@ -14,15 +14,11 @@
   }
   &__item {
     margin-bottom: 90px;
-    &--linked {
+    &:hover {
       .fullscreen__link {
         &::after {
           content: '';
-          @include centered('h');
-          bottom: 0;
           width: 90px;
-          height: 3px;
-          background-color: $white;
         }
       }
     }
@@ -40,6 +36,15 @@
     }
     @include phone {
       font-size: $subheader-fs;
+    }
+    &:after {
+      content: '';
+      height: 3px;
+      background-color: $white;
+      @include centered('h');
+      bottom: 0;
+      width: 0;
+      transition: width .3s ease-in-out;
     }
   }
 }
