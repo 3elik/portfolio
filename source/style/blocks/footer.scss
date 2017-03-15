@@ -80,11 +80,10 @@
   }
 
   &__links {
-    margin-bottom: 10px;
-    text-align: justify;
-    @include tablet {
-      margin-bottom: -10px;
-    }
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     &-item {
       display: inline-block;
       &--last {
