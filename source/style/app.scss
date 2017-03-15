@@ -8,9 +8,12 @@
 @import 'blocks/preloader';
 @import 'blocks/fullscreen';
 @import 'blocks/symbols';
+@import 'blocks/input';
 /*** Welcome ***/
 @import 'layout/welcome';
+@import 'blocks/modal';
 @import 'blocks/hello';
+@import 'blocks/auth';
 @import 'blocks/socials';
 @import 'layout/about';
 @import 'blocks/hero';

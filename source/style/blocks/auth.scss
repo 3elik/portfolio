@@ -1,0 +1,93 @@
+.auth {
+  width: 380px;
+  height: 425px;
+  perspective: 500px;
+
+  @include phone {
+    width: 95%;
+    min-width: 300px;
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 40px 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(#122620, 0.6);
+    color: $white;
+  }
+
+  &__form {
+    margin-bottom: 50px;
+  }
+  &__title {
+
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    color: $white;
+    font-family: $sansus;
+    font-size: $subheader-fs;
+    text-align: center;
+    text-transform: uppercase;
+    @include tablet {
+      margin-bottom: 10px;
+      font-size: $tablet-subheader-fs;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      border-bottom: 3px solid $white;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 2px;
+      width: 100px;
+    }
+  }
+
+
+  &__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .buttons {
+      @extend %clearfix;
+      width: 100%;
+      &__item {
+        float: left;
+        box-sizing: border-box;
+        border-right: 2px solid #a0b99e;
+        width: 50%;
+        &:last-child {
+          border-right: none;
+        }
+      }
+      &__link {
+        display: block;
+        padding: 10px 0;
+        text-align: center;
+        background-color: $green;
+        font-family: $r-m;
+        font-size: $regular-fs;
+        text-decoration: none;
+        color: $white;
+
+        @include phone {
+          font-size: $small-sf;
+        }
+
+        &:hover {
+          background: #498039;
+        }
+      }
+    }
+  }
+}

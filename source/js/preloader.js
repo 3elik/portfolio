@@ -1,7 +1,8 @@
 var preloader = (function () {
   var preloader = $('.js-preloader'),
     total = 0,
-    textPercent = $('.preloader__text');
+    textPercent = $('.preloader__text'),
+    hello = $('.hello__wrapper');
 
   var imgPaths = $('*').map(function (i, el) {
     var background = $(el).css('background-image');
@@ -25,12 +26,16 @@ var preloader = (function () {
     textPercent.text(percents + '%');
 
     if (percents >= 100) {
-      preloader.fadeOut();
+      end_preloader();
     }
+  };
+  var end_preloader = function () {
+    preloader.fadeOut();
+    if (hello.length > 0) hello.addClass('hello__wrapper--displayed');
   };
 
   var loadImages = function (images) {
-    if (!images.length) preloader.fadeOut();
+    if (!images.length) end_preloader();
 
     images.forEach(function (img, i, images) {
       var fakeImg = $('<img>', {
