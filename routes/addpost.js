@@ -3,11 +3,9 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 router.post('/', (req, res) => {
-  //требуем наличия заголовка, даты и текста
   console.log(req.body);
   if (!req.body.title || !req.body.date || !req.body.content) {
-    //если что-либо не указано - сообщаем об этом
-    return res.json({status: JSON.stringify(req.body)});
+    return res.json({status: 'Укажите данные!'});
   }
   const Model = mongoose.model('blog');
   let item = new Model({title: req.body.title, date: req.body.date, content: req.body.content});

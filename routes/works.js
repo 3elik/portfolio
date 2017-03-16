@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
   };
   const Model = mongoose.model('work');
   Model.find().then(items => {
-    console.log(items);
     if (!items) {
       items = [];
     }

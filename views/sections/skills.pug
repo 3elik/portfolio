@@ -1,0 +1,22 @@
+if skills.length > 0
+	.skills
+		.block
+			.block__title
+				| Чем я могу быть Вам полезен
+		.skills__text
+			p Больше всего меня привлекает Backend разработка, но я также знаком и могу решать не сложные задачи на Frontend. Но давайте по порядку
+		ul.skills-group
+			each skill in skills
+				li.skills-group__item
+					.skills-group__title #{skill.title}
+					ul.skills-list
+						each dia in skill.dia
+							li.skills-list__item
+								.skill
+									svg(width="120" height="120").skill__circle
+										- var r = 50;
+										- var opacity = dia.value / 100;
+										- var val = r * opacity * 2 * Math.PI;
+										circle(r=`${r}` cx="60" cy="60" stroke="#dfdcd5" fill="none")
+										circle(r=`${r}` cx="60" cy="60" stroke="#74a163" transform="rotate(-90 60 60)" class="skill__sector" stroke-dasharray='0 300' data-stroke-dasharray=`${val} 300` stroke-opacity="0" data-stroke-opacity=`${opacity}`)
+									.skill__title #{dia.title}

@@ -13,39 +13,19 @@ section.section.section-about
 				.block__title
 					| Кто я
 				.block__text
-					p #{about.text.p1}
-					p #{about.text.p2}
+					p #{text1}
+					p #{text2}
 	.about__col.about__col--right
 		svg(viewBox="0 0 1000 160" preserveAspectRatio="none").about__triangle
 			polygon(points="0,160 1000,160 1000,0")
-		.skills
-			.block
-				.block__title
-					| Чем я могу быть Вам полезен
-			.skills__text
-				p #{about.skills.text}
-			ul.skills-group
-				each skill in about.skills.skills
-					li.skills-group__item
-						.skills-group__title #{skill.title}
-						ul.skills-list
-							each dia in skill.dia
-								li.skills-list__item
-									.skill
-										svg(width="120" height="120").skill__circle
-											- var r = 50;
-											- var opacity = dia.value / 100;
-											- var val = r * opacity * 2 * Math.PI;
-											circle(r=`${r}` cx="60" cy="60" stroke="#dfdcd5" fill="none")
-											circle(r=`${r}` cx="60" cy="60" stroke="#74a163" transform="rotate(-90 60 60)" class="skill__sector" stroke-dasharray='0 300' data-stroke-dasharray=`${val} 300` stroke-opacity="0" data-stroke-opacity=`${opacity}`)
-										.skill__title #{dia.title}
+		include ../sections/skills
 section.section.map
 	#map.map__img
 	.map__contacts.contacts.block
 		.contacts__title.block__title
 			| Контакты
 		ul.contacts__list
-			each contact in about.contacts
+			each contact in contacts
 				li.contacts__item
 					.contacts__img-wrapper
 						svg(class=`contacts__img contacts__img--${contact.item}`)

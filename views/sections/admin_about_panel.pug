@@ -8,51 +8,93 @@ form(method="POST" action="/admin/about").admin-form.admin-form--about#about-for
 				th(colspan="2").admin-table__header WorkFlow
 		tbody
 			tr.admin-table__row
-				td.admin-table__cell.admin-table__cell--title html
+				td.admin-table__cell.admin-table__cell--title HTML
 				td.admin-table__cell.admin-table__cell--input
-					input(name="html" id="html" placeholder="50").admin-table__input
+					- var value = 50
+					if skills[0]
+						if skills[0].dia
+							if skills[0].dia[0]
+								- value = skills[0].dia[0].value
+					input(name="html" id="html" required placeholder="50" value=`${value}`).admin-table__input
 					span.admin-table__percent %
 				td.admin-table__cell.admin-table__cell--title PHP
 				td.admin-table__cell.admin-table__cell--input
-					input(name="php" id="php" placeholder="50").admin-table__input
+					if skills[1]
+						if skills[1].dia
+							if skills[2].dia[0]
+								- value = skills[1].dia[0].value
+					input(name="php" id="php" required placeholder="50" value=`${value}`).admin-table__input
 					span.admin-table__percent %
 				td.admin-table__cell.admin-table__cell--title Git
 				td.admin-table__cell.admin-table__cell--input
-					input(name="git" id="git" placeholder="50").admin-table__input
+					if skills[2]
+						if skills[2].dia
+							if skills[2].dia[0]
+								- value = skills[2].dia[0].value
+					input(name="git" id="git" required placeholder="50" value=`${value}`).admin-table__input
 					span.admin-table__percent %
 			tr.admin-table__row
-				td.admin-table__cell.admin-table__cell--title css
+				td.admin-table__cell.admin-table__cell--title CSS
 				td.admin-table__cell.admin-table__cell--input
-					input(name="css" id="css" placeholder="50").admin-table__input
+					if skills[0]
+						if skills[0].dia
+							if skills[0].dia[1]
+								- value = skills[0].dia[1].value
+					input(name="css" id="css" required placeholder="50" value=`${value}`).admin-table__input
 					span.admin-table__percent %
-				td.admin-table__cell.admin-table__cell--title mySQL
+				td.admin-table__cell.admin-table__cell--title MySQL
 				td.admin-table__cell.admin-table__cell--input
-					input(name="mysql" id="mysql" placeholder="50").admin-table__input
+					if skills[1]
+						if skills[1].dia
+							if skills[1].dia[1]
+								- value = skills[1].dia[1].value
+					input(name="mysql" id="mysql" required placeholder="50" value=`${value}`).admin-table__input
 					span.admin-table__percent %
 				td.admin-table__cell.admin-table__cell--title Gulp
 				td.admin-table__cell.admin-table__cell--input
-					input(name="gulp" id="gulp" placeholder="50").admin-table__input
+					if skills[2]
+						if skills[2].dia
+							if skills[2].dia[1]
+								- value = skills[2].dia[1].value
+					input(name="gulp" id="gulp" required placeholder="50" value=`${value}`).admin-table__input
 					span.admin-table__percent %
 			tr.admin-table__row
 				td.admin-table__cell.admin-table__cell--title JavaScript & jQuery
 				td.admin-table__cell.admin-table__cell--input
-					input(name="js" id="js" placeholder="50").admin-table__input
+					if skills[0]
+						if skills[0].dia
+							if skills[0].dia[2]
+								- value = skills[0].dia[2].value
+					input(name="js" id="js" required placeholder="50" value=`${value}`).admin-table__input
 					span.admin-table__percent %
 				td.admin-table__cell.admin-table__cell--title Node.js & npm
 				td.admin-table__cell.admin-table__cell--input
-					input(name="node" id="node" placeholder="50").admin-table__input
+					if skills[1]
+						if skills[1].dia
+							if skills[1].dia[2]
+								- value = skills[1].dia[2].value
+					input(name="node" id="node" required placeholder="50" value=`${value}`).admin-table__input
 					span.admin-table__percent %
 				td.admin-table__cell.admin-table__cell--title Bower
 				td.admin-table__cell.admin-table__cell--input
-					input(name="bower" id="bower" placeholder="50").admin-table__input
+					if skills[2]
+						if skills[2].dia
+							if skills[2].dia[2]
+								- value = skills[2].dia[2].value
+					input(name="bower" id="bower" required placeholder="50" value=`${value}`).admin-table__input
 					span.admin-table__percent %
 			tr.admin-table__row
 				td.admin-table__cell.admin-table__cell--title
 				td.admin-table__cell.admin-table__cell--input
 				td.admin-table__cell.admin-table__cell--title Mongo.db
 				td.admin-table__cell.admin-table__cell--input
-					input(name="mongodbb" id="mongodbb" placeholder="50").admin-table__input
+					if skills[1]
+						if skills[1].dia
+							if skills[1].dia[3]
+								- value = skills[1].dia[3].value
+					input(name="mongodb" id="mongodb" required placeholder="50" value=`${value}`).admin-table__input
 					span.admin-table__percent %
 				td.admin-table__cell.admin-table__cell--title
 				td.admin-table__cell.admin-table__cell--input
 	input(type="submit" value="Сохранить").admin-form__submit.js-submit
+	.admin-form__status

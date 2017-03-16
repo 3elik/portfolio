@@ -12,5 +12,6 @@ module.exports = [
   './source/js/contact_me.js',
   './source/js/tabs.js',
   './source/js/admin_blog.js',
-  './source/js/admin_work.js'
+  './source/js/admin_work.js',
+  './source/js/admin_about.js'
 ];
