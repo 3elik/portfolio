@@ -232,4 +232,5 @@ $(function () {
   auth.init();
   contact_me.init();
   tabs.init();
+  admin_blog.init();
 });

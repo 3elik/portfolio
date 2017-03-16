@@ -1,6 +1,8 @@
 h2.panels__title Страница "Блог"
 form(method="POST" action="/admin/blog").admin-form.admin-form--blog#blog-form
 	h4.admin-form__title Добавить запись
-	input(type="text" name="name" required placeholder="Название").admin-form__input
-	textarea(noresize name="content" rows="7" required placeholder="Контент").admin-form__textarea
+	input(type="text" name="name" required placeholder="Название").admin-form__input#blog_name
+	input(type="date" name="date" required placeholder="Дата").admin-form__input#blog_date
+	textarea(noresize name="content" rows="7" required placeholder="Контент").admin-form__textarea#blog_content
 	input(type="submit" value="Сохранить").admin-form__submit.js-submit
+	.admin-form__status

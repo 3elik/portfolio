@@ -6,8 +6,8 @@ section.section.section-blog
 			polygon(points="0,160 1000,160 1000,0")
 	include ../sections/sidebar
 	.articles
-		each article in blog.articles
+		each article in items
 			article(id=`article-${article.id}` data-link=`#sidebar__item-${article.id}`).article
 				h2.article__title #{article.title}
 				.article__date #{article.date}
-				.article__content!= article.text
+				.article__content!= article.content

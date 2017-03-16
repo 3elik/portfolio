@@ -10,5 +10,6 @@ module.exports = [
   './source/js/water.js',
   './source/js/auth.js',
   './source/js/contact_me.js',
-  './source/js/tabs.js'
+  './source/js/tabs.js',
+  './source/js/admin_blog.js'
 ];

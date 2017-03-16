@@ -6,6 +6,21 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const server = http.createServer(app);
 const currentStatic = require('./gulp/config').root;
+const config = require('./config.json');
+const uploadDir = config.upload;
+
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
+  user: config.db.user,
+  pass: config.db.password
+}).catch(e => {
+  console.error(e);
+  throw e;
+});
+
+//Models
+require('./models/blog');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +37,7 @@ app.use('/about(.html)?', require('./routes/about'));
 app.use('/blog(.html)?', require('./routes/blog'));
 app.use('/contact', require('./routes/contact'));
 app.use('/admin(.html)?', require('./routes/admin'));
+app.use('/addpost', require('./routes/addpost'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
