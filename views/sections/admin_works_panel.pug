@@ -1,0 +1,8 @@
+h2.panels__title Страница "Мои работы"
+form(method="POST" action="/admin/works" enctype="multipart/form-data").admin-form.admin-form--works#works-form
+	h4.admin-form__title Добавить запись
+	input(type="text" name="name" required placeholder="Название проекта").admin-form__input
+	input(type="text" name="tech" required placeholder="Технологии").admin-form__input
+	input(type="text" name="link" required placeholder="Ссылка").admin-form__input
+	input(type="file" name="img" required accept="images/*").admin-form__input
+	input(type="submit" value="Сохранить").admin-form__submit.js-submit

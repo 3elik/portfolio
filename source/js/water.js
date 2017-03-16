@@ -68,6 +68,8 @@
 	var fileMapsPath = './assets/img/water-maps.jpg';
 	
 	var canvas = document.querySelector(canvasSelector);
+
+	if (!canvas) return;
 	
 	var textureAlign = { x: 0.5, y: 0.9 };
 	var textures = [{

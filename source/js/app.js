@@ -231,4 +231,5 @@ $(function () {
   sticky_sidebar.init();
   auth.init();
   contact_me.init();
+  tabs.init();
 });

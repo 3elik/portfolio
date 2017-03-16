@@ -42,3 +42,10 @@
 @import 'blocks/quotes';
 @import 'blocks/contact-me';
 @import 'blocks/arrow-box';
+/*** Admin ***/
+@import 'layout/admin';
+@import 'blocks/header';
+@import 'blocks/tabs';
+@import 'blocks/panels';
+@import 'blocks/admin-table';
+@import 'blocks/admin-form';

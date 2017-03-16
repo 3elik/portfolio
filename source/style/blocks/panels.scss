@@ -1,0 +1,29 @@
+.panels {
+  position: relative;
+  height: calc(100% - 175px);
+  width: 100%;
+  background-color: rgba($light-green, 0.3);
+  background: url("../img/admin_bg.jpg");
+  background-size: cover;
+  &__panel {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 50px;
+    opacity: 0;
+    transition: opacity 1s ;
+    background-color: rgba($white, 0.5);
+    &--active {
+      display: block;
+      opacity: 1;
+    }
+  }
+  &__title {
+    font-family: $sansus;
+    font-size: $subheader-fs;
+    margin-bottom: 20px;
+  }
+}

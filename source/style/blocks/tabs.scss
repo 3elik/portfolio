@@ -1,0 +1,35 @@
+.tabs {
+  background-color: #edf0eb;
+  height: 75px;
+  overflow: hidden;
+
+  &__item {
+    display: inline-block;
+    box-sizing: border-box;
+    border-right: 2px solid $white;
+    &--active {
+      .tabs__link {
+        color: $light-green;
+        background-color: $white;
+        &:hover {
+          color: $light-green;
+          background-color: $white;
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 25px 70px;
+    text-transform: uppercase;
+    font-family: $r-r;
+    font-size: $tablet-big-fs;
+    text-decoration: none;
+    color: $grey;
+    &:hover {
+      background-color: rgba($white, 0.5);
+      color: rgba($light-green, 0.5);
+    }
+  }
+}

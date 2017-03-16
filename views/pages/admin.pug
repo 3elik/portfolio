@@ -1,0 +1,26 @@
+extends ../_template
+
+block title
+	title Админка
+
+block content
+	.wrapper
+		.container
+			header.header
+				h1.header__title Панель администрирования
+				a(href="/").header__link Вернуться на сайт
+			nav.tabs
+				ul.tabs__list
+					li.tabs__item.tabs__item--active
+						a(href="#" data-target="#panel__about").tabs__link Обо мне
+					li.tabs__item
+						a(href="#" data-target="#panel__blog").tabs__link Блог
+					li.tabs__item
+						a(href="#" data-target="#panel__works").tabs__link Мои работы
+			.panels
+				.panels__panel.panel__panel--about#panel__about.panels__panel--active
+					include ../sections/admin_about_panel
+				.panels__panel.panel__panel--blog#panel__blog
+					include ../sections/admin_blog_panel
+				.panels__panel.panel__panel--works#panel__works
+					include ../sections/admin_works_panel

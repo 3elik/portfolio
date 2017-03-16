@@ -21,6 +21,7 @@ app.use('/works(.html)?', require('./routes/works'));
 app.use('/about(.html)?', require('./routes/about'));
 app.use('/blog(.html)?', require('./routes/blog'));
 app.use('/contact', require('./routes/contact'));
+app.use('/admin(.html)?', require('./routes/admin'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

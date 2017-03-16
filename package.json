@@ -32,6 +32,7 @@
     "express": "^4.15.2",
     "formidable": "^1.1.1",
     "jquery": "~3.1.1",
+    "mongoose": "^4.9.0",
     "morgan": "^1.8.1",
     "nodemailer": "^3.1.7",
     "nodemailer-smtp-transport": "^2.7.2",
