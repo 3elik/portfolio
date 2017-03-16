@@ -8,5 +8,6 @@ module.exports = [
   './source/js/slider.js',
   './source/js/app.js',
   './source/js/water.js',
-  './source/js/auth.js'
+  './source/js/auth.js',
+  './source/js/contact_me.js'
 ];

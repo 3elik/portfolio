@@ -230,4 +230,5 @@ $(function () {
   sidebar.init();
   sticky_sidebar.init();
   auth.init();
+  contact_me.init();
 });

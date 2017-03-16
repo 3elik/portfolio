@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET works page. */
+/* GET blog page. */
 router.get('/', function(req, res, next) {
   let obj = {
     blog: {

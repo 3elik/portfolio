@@ -85,4 +85,26 @@
       background-color: rgba($green, 0.8);
     }
   }
+  &__status {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(#e0e0dc, 0.5);
+    z-index: 100;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: $r-r;
+    font-size: $regular-fs;
+    color: $grey;
+    opacity: 0;
+    transition: opacity .3s;
+    &--loading {
+      display: flex;
+      opacity: 1;
+    }
+  }
 }
