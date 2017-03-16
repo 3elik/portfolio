@@ -9,36 +9,7 @@ section.section.section-works
 			.my-works__title-title Мои работы
 			svg(viewBox="0 0 498.161 175.44").my-works__title-bg
 				use(xlink:href=`./assets/img/sprite.svg#works_header`)
-section.examples
-	.examples__part.examples__preview
-		img(src=`${works[0].img}`).examples__preview-img
-	.examples__part.examples__content
-		.examples__content-part
-			.examples__title.symbols #{works[0].title}
-			.examples__subtitle #{works[0].technologies}
-			.examples__link-wrapper
-				a(href=`${works[0].link}`).examples__link
-					i(aria-hidden="true").fa.fa-link.examples__icon
-					| Посмотреть сайт
-	.examples__part.examples__slider.slider
-		.slider__part.slider__part--down
-			a(href="#").slider__arrow.slider__arrow--down
-				svg.slider__arrow-img.slider__arrow-img--down
-					use(xlink:href=`./assets/img/sprite.svg#arrow_down`)
-			each work, index in works
-				- var active = ""
-				if index == ( works.length - 1 )
-					- active = "slider__preview--active"
-				img(src=`${work.img}` class=`slider__preview ${active}` data-title=`${work.title}` data-tech=`${work.technologies}` data-href=`${work.link}`)
-		.slider__part.slider__part--up
-			a(href="#").slider__arrow.slider__arrow--up
-				svg.slider__arrow-img.slider__arrow-img--up
-					use(xlink:href=`./assets/img/sprite.svg#arrow_down`)
-			each work, index in works
-				- var active = ""
-				if index == 1
-					- active = "slider__preview--active"
-				img(src=`${work.img}` class=`slider__preview ${active}` data-title=`${work.title}` data-tech=`${work.technologies}` data-href=`${work.link}`)
+include ../sections/examples
 section.what_about
 	.what_about__title
 		.what_about__title-title Что обо мне говорят

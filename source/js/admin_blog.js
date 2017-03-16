@@ -27,7 +27,7 @@ var admin_blog = (function () {
       form[0].reset();
       setTimeout(function () {
         status.html('');
-      }, 500);
+      }, 1000);
     });
   };
 

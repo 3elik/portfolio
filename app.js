@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const http = require('http');
+const fs = require('fs');
 const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
@@ -21,6 +22,7 @@ mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name
 
 //Models
 require('./models/blog');
+require('./models/work');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,6 +40,7 @@ app.use('/blog(.html)?', require('./routes/blog'));
 app.use('/contact', require('./routes/contact'));
 app.use('/admin(.html)?', require('./routes/admin'));
 app.use('/addpost', require('./routes/addpost'));
+app.use('/addwork', require('./routes/addwork'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -59,6 +62,9 @@ app.use(function(err, req, res, next) {
 
 server.listen(3000, 'localhost');
 server.on('listening', function () {
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir);
+  }
   console.log('Express server started on port %s at %s', server.address().port, server.address())
 });
 

@@ -1,0 +1,31 @@
+if items.length > 0
+	section.examples
+		.examples__part.examples__preview
+			img(src=`${items[0].img}`).examples__preview-img
+		.examples__part.examples__content
+			.examples__content-part
+				.examples__title.symbols #{items[0].title}
+				.examples__subtitle #{items[0].tech}
+				.examples__link-wrapper
+					a(href=`${items[0].link}`).examples__link
+						i(aria-hidden="true").fa.fa-link.examples__icon
+						| Посмотреть сайт
+		.examples__part.examples__slider.slider
+			.slider__part.slider__part--down
+				a(href="#").slider__arrow.slider__arrow--down
+					svg.slider__arrow-img.slider__arrow-img--down
+						use(xlink:href=`./assets/img/sprite.svg#arrow_down`)
+				each work, index in items
+					- var active = ""
+					if index == ( items.length - 1 )
+						- active = "slider__preview--active"
+					img(src=`${work.img}` class=`slider__preview ${active}` data-title=`${work.title}` data-tech=`${work.tech}` data-href=`${work.link}`)
+			.slider__part.slider__part--up
+				a(href="#").slider__arrow.slider__arrow--up
+					svg.slider__arrow-img.slider__arrow-img--up
+						use(xlink:href=`./assets/img/sprite.svg#arrow_down`)
+				each work, index in items
+					- var active = ""
+					if index == 1
+						- active = "slider__preview--active"
+					img(src=`${work.img}` class=`slider__preview ${active}` data-title=`${work.title}` data-tech=`${work.tech}` data-href=`${work.link}`)

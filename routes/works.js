@@ -1,37 +1,21 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const mongoose = require('mongoose');
 
 /* GET works page. */
 router.get('/', function(req, res, next) {
   let obj = {
-    works:  [
-      {
-        "img" : "./assets/img/work-1.png",
-        "title" : "Сайт школы онлайн образования",
-        "technologies" : "HTML, CSS, Javascript",
-        "link" : "#"
-      },
-      {
-        "img" : "./assets/img/work-2.png",
-        "title" : "Агентство интернет решений",
-        "technologies" : "Wordpress, PHP, CSS, jQuery",
-        "link" : "#"
-      },
-      {
-        "img" : "./assets/img/work-3.png",
-        "title" : "LoftBlog - Портал видеоуроков",
-        "technologies" : "Wordpress, PHP, CSS, jQuery",
-        "link" : "#"
-      },
-      {
-        "img" : "./assets/img/work-4.png",
-        "title" : "Сайт студии йоги AtmaYoga",
-        "technologies" : "HTML, CSS, Javascript",
-        "link" : "#"
-      }
-    ]
+    title: "Мои работы"
   };
-  res.render('pages/works', obj);
+  const Model = mongoose.model('work');
+  Model.find().then(items => {
+    console.log(items);
+    if (!items) {
+      items = [];
+    }
+    Object.assign(obj, {items:items});
+    res.render('pages/works', obj);
+  });
 });
 
 module.exports = router;
