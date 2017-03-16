@@ -12,13 +12,14 @@ const uploadDir = config.upload;
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
+/*mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
   user: config.db.user,
   pass: config.db.password
 }).catch(e => {
   console.error(e);
   throw e;
-});
+});*/
+mongoose.connect('mongodb://tester:12tester34@ds131510.mlab.com:31510/loft');
 
 //Models
 require('./models/blog');
