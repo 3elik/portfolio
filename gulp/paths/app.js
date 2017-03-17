@@ -13,5 +13,6 @@ module.exports = [
   './source/js/tabs.js',
   './source/js/admin_blog.js',
   './source/js/admin_work.js',
-  './source/js/admin_about.js'
+  './source/js/admin_about.js',
+  './source/js/login.js'
 ];

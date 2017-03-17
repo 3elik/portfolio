@@ -1,13 +1,14 @@
-form(method="post" action="").auth__form.js-auth-form.form
+form(method="post" action="").auth__form.js-auth-form.form#auth-form
+	.admin-form__status
 	.form__input.input
 		.input__icon-wrapper
 			i(class="fa fa-user input__icon" aria-hidden="true")
-		input(name="login" placeholder="Логин" type="text").form__login.input__input
+		input(name="login" placeholder="Логин" type="text").form__login.input__input#auth-login
 		.input__error
 	.form__input.input
 		.input__icon-wrapper
 			i(class="fa fa-key input__icon" aria-hidden="true")
-		input(name="pass" placeholder="Пароль" type="password").form__pass.input__input
+		input(name="pass" placeholder="Пароль" type="password").form__pass.input__input#auth-pass
 		.input__error
 	.form__input-wrapper.form__input-wrapper--check.input
 		input(type="checkbox" name="is_human").form__checkbox.form__is-human#is_human

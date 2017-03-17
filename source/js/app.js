@@ -235,4 +235,5 @@ $(function () {
   admin_blog.init();
   admin_work.init();
   admin_about.init();
+  login.init();
 });

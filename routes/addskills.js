@@ -2,6 +2,13 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
+const isAdmin = function (req, res, next) {
+  if (req.session.isAdmin) {
+    return next();
+  }
+  res.json({status: 'У Вас нет прав админа!'});
+};
+
 var modelUpdate = function (title, data, cb) {
   console.log(title);
   console.log(data);
@@ -31,7 +38,7 @@ var modelUpdate = function (title, data, cb) {
   );
 };
 
-router.post('/', (req, res) => {
+router.post('/', isAdmin, (req, res) => {
   modelUpdate("Frontend", req.body.frontend, function () {
     modelUpdate("Backend", req.body.backend, function () {
       modelUpdate("Workflow", req.body.workflow, function () {

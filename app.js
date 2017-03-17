@@ -10,6 +10,9 @@ const currentStatic = require('./gulp/config').root;
 const config = require('./config.json');
 const uploadDir = config.upload;
 
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 /*mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
@@ -25,6 +28,7 @@ mongoose.connect(config.mongo);
 require('./models/blog');
 require('./models/work');
 require('./models/skills');
+require('./models/user');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,6 +38,18 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, currentStatic)));
+app.use(session({
+  secret: 'secret',
+  key: 'keys',
+  cookie: {
+    path: '/',
+    httpOnly: true,
+    maxAge: null
+  },
+  saveUninitialized: false,
+  resave: false,
+  store: new MongoStore({mongooseConnection: mongoose.connection})
+}));
 
 app.use('/', require('./routes/index'));
 app.use('/works(.html)?', require('./routes/works'));
@@ -44,6 +60,7 @@ app.use('/admin(.html)?', require('./routes/admin'));
 app.use('/addpost', require('./routes/addpost'));
 app.use('/addwork', require('./routes/addwork'));
 app.use('/addskills', require('./routes/addskills'));
+app.use('/login', require('./routes/login'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

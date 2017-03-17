@@ -6,7 +6,14 @@ const path = require('path');
 const mongoose = require('mongoose');
 const config = require('../config.json');
 
-router.post('/', (req, res) => {
+const isAdmin = function (req, res, next) {
+  if (req.session.isAdmin) {
+    return next();
+  }
+  res.json({status: 'У Вас нет прав админа!'});
+};
+
+router.post('/', isAdmin, (req, res) => {
   let form = new formidable.IncomingForm();
   form.uploadDir = config.upload;
   form.parse(req, function (err, fields, files) {

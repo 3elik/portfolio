@@ -2,7 +2,14 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-router.post('/', (req, res) => {
+const isAdmin = function (req, res, next) {
+  if (req.session.isAdmin) {
+    return next();
+  }
+  res.json({status: 'У Вас нет прав админа!'});
+};
+
+router.post('/', isAdmin, (req, res) => {
   console.log(req.body);
   if (!req.body.title || !req.body.date || !req.body.content) {
     return res.json({status: 'Укажите данные!'});
