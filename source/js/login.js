@@ -42,7 +42,7 @@ var login = (function () {
   return {
     init: function () {
       if (form.length > 0) {
-        enter.on('click', submitForm);
+        // enter.on('click', submitForm);
         form.on('submit', prepareSend)
       }
     }

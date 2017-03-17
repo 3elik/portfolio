@@ -1,6 +1,7 @@
 var auth = (function () {
   var modal = $('.js-modal'),
     form = $('.js-auth-form'),
+    submitedForm = $('#auth-form'),
     btn = $('.js-auth-button'),
     btnToMain = $('.js-to-main'),
     btnEnter = $('.js-enter'),
@@ -35,18 +36,26 @@ var auth = (function () {
   };
 
   var validationForm = function () {
-    var data = getData(form);
+    var data = getData(form),
+      isValild = true;
     if (!data.login.trim()) {
       showError($('.form__login').closest('.input'), 'Вы не ввели логин!');
+      isValild = false;
     }
     if (!data.pass.trim()) {
       showError($('.form__pass').closest('.input'), 'Вы не ввели пароль!');
+      isValild = false;
     }
     if (!data.is_human) {
       showError($('.form__is-human').closest('.input'), 'Вы не человек!');
+      isValild = false;
     }
     if (!data.sure || data.sure == 'no') {
       showError($('.form__radio--sure').closest('.input'), 'Вы не уточнили!');
+      isValild = false;
+    }
+    if (isValild) {
+      submitedForm.submit();
     }
   };
 
