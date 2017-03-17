@@ -1,10 +1,11 @@
 'use strict';
 
-const mongoose = require('mongoose'),
-  readline = require('readline'),
-  rl = readline.createInterface({input: process.stdin, output: process.stdout});
+const mongoose = require('mongoose');
+const readline = require('readline');
+const rl = readline.createInterface({input: process.stdin, output: process.stdout});
+const config = require('./config.json');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://tester:12tester34@ds131510.mlab.com:31510/loft');
+mongoose.connect(config.mongo);
 
 let login = '',
   password = '';

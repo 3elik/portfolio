@@ -1,7 +1,16 @@
 {
+  "upload":"public/upload",
   "mail": {
     "subject": "Сообщение с сайта-портфолио",
     "user": "test@gmail.com",
     "pass": "test"
-  }
+  },
+  "db": {
+    "host": "localhost",
+    "port": "27017",
+    "name": "loft",
+    "user": "",
+    "password": ""
+  },
+  "mongo":"mongodb://tes:tes@dtest.mlab.com:test/loft"
 }

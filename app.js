@@ -19,7 +19,7 @@ mongoose.Promise = global.Promise;
   console.error(e);
   throw e;
 });*/
-mongoose.connect('mongodb://tester:12tester34@ds131510.mlab.com:31510/loft');
+mongoose.connect(config.mongo);
 
 //Models
 require('./models/blog');
