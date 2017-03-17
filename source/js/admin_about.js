@@ -38,7 +38,7 @@ var admin_about = (function () {
         },
         {
           title: 'MySQL',
-          value: $('input[name="php"]').val()
+          value: $('input[name="mysql"]').val()
         },
         {
           title: 'Node.js & npm',
@@ -67,7 +67,7 @@ var admin_about = (function () {
     status.innerHTML = 'Sending...';
     sendAjaxJson('/addskills', data, function (data) {
       status.html(data);
-      form[0].reset();
+      //form[0].reset();
       setTimeout(function () {
         status.html('');
       }, 1000);
